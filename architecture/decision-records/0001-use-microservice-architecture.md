@@ -32,7 +32,7 @@ during adoption.
 explicit constraint of the Organization is that a failure in one service or part of the application 
 should not trigger a failure in another.
 
-- Istio Service Mesh on Kubernetes: This alternative would have been ideal since the Istio service mesh 
+- Space-Based Architecture: This alternative would have been ideal since the we could use a service mesh to 
 provides capabilities like observability, traffic management and security without having to modify source
 code. However, the upfront complexity for the increased scalability in the future did not seem warranted
 given that the S-ARC system is targeted to a very niche customer base. If we had a larger set of microservices 
