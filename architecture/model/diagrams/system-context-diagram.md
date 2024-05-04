@@ -1,0 +1,10 @@
+```plantuml
+@startuml
+!include <C4/C4_Container>
+
+Person(user, "User", "Optional Description")
+System(system, "S-ARC", "Optional Description")
+
+Rel(user, system, "uses", "HTTPS")
+@enduml
+```
