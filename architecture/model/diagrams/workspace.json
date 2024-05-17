@@ -5,7 +5,7 @@
   "description" : "Description",
   "documentation" : { },
   "id" : 1,
-  "lastModifiedDate" : "2024-05-17T16:11:05Z",
+  "lastModifiedDate" : "2024-05-17T19:29:16Z",
   "model" : {
     "people" : [ {
       "id" : "1",
@@ -19,28 +19,28 @@
         "destinationId" : "3",
         "id" : "4",
         "properties" : {
-          "structurizr.dsl.identifier" : "9572a938-c289-463c-b469-22c77bfc96d0"
+          "structurizr.dsl.identifier" : "2de6dc48-d5d4-42d2-84b5-df5cda122324"
         },
         "sourceId" : "1",
         "tags" : "Relationship",
-        "technology" : "[HTTPS]"
+        "technology" : "HTTPS"
       }, {
         "description" : "Visits chat.s-arc.com using",
         "destinationId" : "2",
         "id" : "5",
         "linkedRelationshipId" : "4",
         "sourceId" : "1",
-        "technology" : "[HTTPS]"
+        "technology" : "HTTPS"
       }, {
         "description" : "Interacts with the LLM through a chat interface using",
         "destinationId" : "6",
         "id" : "8",
         "properties" : {
-          "structurizr.dsl.identifier" : "97617ca9-b431-4e22-ade1-a7820c69cf2d"
+          "structurizr.dsl.identifier" : "370d71b6-fb77-4813-8d24-5c685a191aaa"
         },
         "sourceId" : "1",
         "tags" : "Relationship",
-        "technology" : "[HTTPS]"
+        "technology" : "HTTPS"
       } ],
       "tags" : "Element,Person"
     } ],
@@ -58,12 +58,12 @@
           "destinationId" : "6",
           "id" : "7",
           "properties" : {
-            "structurizr.dsl.identifier" : "48dc7d71-b979-4dca-b7e5-3c74d2c5e1fb"
+            "structurizr.dsl.identifier" : "dbbb94ce-587a-49a1-9b8a-dc5cd3b28d50"
           },
           "sourceId" : "3",
           "tags" : "Relationship"
         } ],
-        "tags" : "Element,Container",
+        "tags" : "Element,Container,Web Browser",
         "technology" : "Python and FastAPI"
       }, {
         "description" : "Provides a chat interface to interact with the LLM",
@@ -74,131 +74,409 @@
           "structurizr.dsl.identifier" : "sarcsystem.singlepageapplication"
         },
         "relationships" : [ {
-          "description" : "Requests authentication and authorization tokens from",
-          "destinationId" : "9",
-          "id" : "10",
+          "description" : "Makes auth requests to",
+          "destinationId" : "10",
+          "id" : "11",
           "properties" : {
-            "structurizr.dsl.identifier" : "ba781494-5754-4c4b-bb0f-3f488ce85f1d"
+            "structurizr.dsl.identifier" : "897c0f8c-6856-4f73-abad-261e521904d8"
           },
           "sourceId" : "6",
           "tags" : "Relationship",
-          "technology" : "[HTTPS]"
+          "technology" : "HTTPS"
         }, {
-          "description" : "Sends natural language prompt to",
+          "description" : "Makes auth requests to",
+          "destinationId" : "9",
+          "id" : "12",
+          "linkedRelationshipId" : "11",
+          "sourceId" : "6",
+          "technology" : "HTTPS"
+        }, {
+          "description" : "Requests new account creation from",
           "destinationId" : "13",
           "id" : "14",
           "properties" : {
-            "structurizr.dsl.identifier" : "d31e99a3-37a5-43c1-ad0b-2a02cde40792"
+            "structurizr.dsl.identifier" : "98d2b9b3-f8fb-40c3-9afb-4255fc9d1a8c"
           },
           "sourceId" : "6",
           "tags" : "Relationship",
-          "technology" : "[HTTPS]"
+          "technology" : "HTTPS"
+        }, {
+          "description" : "Requests password reset from",
+          "destinationId" : "15",
+          "id" : "16",
+          "properties" : {
+            "structurizr.dsl.identifier" : "f5b8e6cd-5523-4baf-9c05-a60e6d39751a"
+          },
+          "sourceId" : "6",
+          "tags" : "Relationship",
+          "technology" : "HTTPS"
+        }, {
+          "description" : "Requests new auth tokens from",
+          "destinationId" : "17",
+          "id" : "18",
+          "properties" : {
+            "structurizr.dsl.identifier" : "14c5e09d-431c-4ac6-bc23-f90058e186ca"
+          },
+          "sourceId" : "6",
+          "tags" : "Relationship",
+          "technology" : "HTTPS"
+        }, {
+          "description" : "Sends natural language prompt to",
+          "destinationId" : "28",
+          "id" : "29",
+          "properties" : {
+            "structurizr.dsl.identifier" : "8272b179-6cfe-4b8f-88e7-fc55d2c5f13f"
+          },
+          "sourceId" : "6",
+          "tags" : "Relationship",
+          "technology" : "HTTPS"
+        }, {
+          "description" : "Forwards the prompt to",
+          "destinationId" : "30",
+          "id" : "31",
+          "properties" : {
+            "structurizr.dsl.identifier" : "70586e50-b49a-491b-ac77-426480b44247"
+          },
+          "sourceId" : "6",
+          "tags" : "Relationship",
+          "technology" : "HTTPS"
         }, {
           "description" : "Makes API calls to",
-          "destinationId" : "19",
-          "id" : "20",
+          "destinationId" : "46",
+          "id" : "47",
           "properties" : {
-            "structurizr.dsl.identifier" : "1242abc7-bf5b-4fb3-9200-0478d5a271e2"
+            "structurizr.dsl.identifier" : "ea1aa031-eade-4309-a732-109bdaa85ec7"
           },
           "sourceId" : "6",
           "tags" : "Relationship",
-          "technology" : "[HTTPS]"
+          "technology" : "HTTPS"
         }, {
           "description" : "Makes API calls to",
-          "destinationId" : "26",
-          "id" : "27",
+          "destinationId" : "53",
+          "id" : "54",
           "properties" : {
-            "structurizr.dsl.identifier" : "68cc31b9-2a68-427d-9be8-a828b152d085"
+            "structurizr.dsl.identifier" : "bc9e87d0-ee23-4e2b-a569-bee0fed05105"
           },
           "sourceId" : "6",
           "tags" : "Relationship",
-          "technology" : "[HTTPS]"
+          "technology" : "HTTPS"
+        }, {
+          "description" : "Requests payment processing from",
+          "destinationId" : "57",
+          "id" : "58",
+          "properties" : {
+            "structurizr.dsl.identifier" : "85b6ce23-bb4c-4731-b180-cf4908240051"
+          },
+          "sourceId" : "6",
+          "tags" : "Relationship",
+          "technology" : "HTTPS"
+        }, {
+          "description" : "Requests payment processing from",
+          "destinationId" : "55",
+          "id" : "59",
+          "linkedRelationshipId" : "58",
+          "sourceId" : "6",
+          "technology" : "HTTPS"
         } ],
-        "tags" : "Element,Container",
+        "tags" : "Element,Container,Web Browser",
         "technology" : "Typescript and React"
       }, {
+        "components" : [ {
+          "description" : "Allows users to sign into the S-ARC System",
+          "documentation" : { },
+          "id" : "10",
+          "name" : "Sign In Controller",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sarcsystem.authserviceapi.signincontroller"
+          },
+          "relationships" : [ {
+            "description" : "Delegates authentication and authorization to",
+            "destinationId" : "19",
+            "id" : "20",
+            "properties" : {
+              "structurizr.dsl.identifier" : "f4b5d3df-caec-4be8-b27b-e94ad70d1a36"
+            },
+            "sourceId" : "10",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Queries for user information",
+            "destinationId" : "23",
+            "id" : "25",
+            "properties" : {
+              "structurizr.dsl.identifier" : "63ebe368-803b-4fc5-afab-d697615fdf67"
+            },
+            "sourceId" : "10",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component,Auth Service,Service Component",
+          "technology" : "Spring Boot Controller"
+        }, {
+          "description" : "Allows users to sign up for the S-ARC System",
+          "documentation" : { },
+          "id" : "13",
+          "name" : "Sign Up Controller",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sarcsystem.authserviceapi.signupcontroller"
+          },
+          "relationships" : [ {
+            "description" : "Delegates authentication and authorization to",
+            "destinationId" : "19",
+            "id" : "21",
+            "properties" : {
+              "structurizr.dsl.identifier" : "f91aae07-6205-4682-961b-daf3f86f35c4"
+            },
+            "sourceId" : "13",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Writes user information",
+            "destinationId" : "23",
+            "id" : "26",
+            "properties" : {
+              "structurizr.dsl.identifier" : "b0513a80-15df-43bb-a411-38d613f2428e"
+            },
+            "sourceId" : "13",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component,Auth Service,Service Component",
+          "technology" : "Spring Boot Controller"
+        }, {
+          "description" : "Allows users to reset their password with a one-time URL",
+          "documentation" : { },
+          "id" : "15",
+          "name" : "Reset Password Controller",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sarcsystem.authserviceapi.resetpasswordcontroller"
+          },
+          "relationships" : [ {
+            "description" : "Delegates authentication and authorization to",
+            "destinationId" : "19",
+            "id" : "22",
+            "properties" : {
+              "structurizr.dsl.identifier" : "d5d80ddd-3d40-4a43-bc07-08a6e4aa0379"
+            },
+            "sourceId" : "15",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Updates user information",
+            "destinationId" : "23",
+            "id" : "27",
+            "properties" : {
+              "structurizr.dsl.identifier" : "5a9f336f-ef90-45fd-9e1f-d84dd107c433"
+            },
+            "sourceId" : "15",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component,Auth Service,Service Component",
+          "technology" : "Spring Boot Controller"
+        }, {
+          "description" : "Allows users to refresh their authentication tokens",
+          "documentation" : { },
+          "id" : "17",
+          "name" : "Refresh Token Controller",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sarcsystem.authserviceapi.refreshtokencontroller"
+          },
+          "tags" : "Element,Component,Auth Service,Service Component",
+          "technology" : "Spring Boot Controller"
+        }, {
+          "description" : "Provides authentication and authorization functionality",
+          "documentation" : { },
+          "id" : "19",
+          "name" : "Spring Security",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sarcsystem.authserviceapi.springsecurity"
+          },
+          "tags" : "Element,Component,Auth Service,Service Component",
+          "technology" : "Spring Bean"
+        } ],
         "description" : "Provides user authentication and authorization functionality",
         "documentation" : { },
-        "group" : "Authentication Service",
+        "group" : "Auth Service",
         "id" : "9",
-        "name" : "Authentication API",
+        "name" : "Auth API",
         "properties" : {
-          "structurizr.dsl.identifier" : "sarcsystem.authenticationserviceapi"
+          "structurizr.dsl.identifier" : "sarcsystem.authserviceapi"
         },
         "relationships" : [ {
           "description" : "Reads from and writes to",
-          "destinationId" : "11",
-          "id" : "12",
+          "destinationId" : "23",
+          "id" : "24",
           "properties" : {
-            "structurizr.dsl.identifier" : "80952353-085b-45df-96e7-ba9756441f42"
+            "structurizr.dsl.identifier" : "e9da38aa-9f86-4fe0-8787-ba36dbc7d6bd"
           },
           "sourceId" : "9",
           "tags" : "Relationship",
           "technology" : "[TCP/SQL]"
+        }, {
+          "description" : "Requests user subscription information from",
+          "destinationId" : "55",
+          "id" : "56",
+          "properties" : {
+            "structurizr.dsl.identifier" : "933a2731-0c70-4fa9-8683-991894c507ea"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship",
+          "technology" : "HTTPS"
         } ],
-        "tags" : "Element,Container,Authentication Service,Service API",
+        "tags" : "Element,Container,Auth Service,Service API",
         "technology" : "Kotlin and Spring Boot"
       }, {
         "description" : "Stores user information",
         "documentation" : { },
-        "group" : "Authentication Service",
-        "id" : "11",
-        "name" : "Authentication API Database",
+        "group" : "Auth Service",
+        "id" : "23",
+        "name" : "Auth API Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "sarcsystem.c9cb395b-f79f-48bb-a9ba-11d9a4951da2"
+          "structurizr.dsl.identifier" : "sarcsystem.4de05a59-1f02-418d-af76-6f71cdb0bb33"
         },
-        "tags" : "Element,Container,Authentication Service,Database",
+        "tags" : "Element,Container,Auth Service,Database",
         "technology" : "PostgreSQL"
       }, {
+        "components" : [ {
+          "description" : "Forwards the prompt to the Embedding Model",
+          "documentation" : { },
+          "id" : "30",
+          "name" : "Embedding Model Controller",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sarcsystem.contextserviceapi.embeddingcontroller"
+          },
+          "relationships" : [ {
+            "description" : "Gets prompt token embeddings from",
+            "destinationId" : "32",
+            "id" : "33",
+            "properties" : {
+              "structurizr.dsl.identifier" : "4f0adc95-89a4-4d00-a306-848f9064fc8d"
+            },
+            "sourceId" : "30",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Forwards the prompt token embeddings generated by the embedding model",
+            "destinationId" : "34",
+            "id" : "35",
+            "properties" : {
+              "structurizr.dsl.identifier" : "d4564c07-f7f8-47a3-b4c2-3a2903968427"
+            },
+            "sourceId" : "30",
+            "tags" : "Relationship",
+            "technology" : "HTTPS"
+          } ],
+          "tags" : "Element,Component,Context Service,Service Component",
+          "technology" : "FastAPI Controller"
+        }, {
+          "description" : "Generates embeddings for the provided prompt",
+          "documentation" : { },
+          "id" : "32",
+          "name" : "Embedding Model",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sarcsystem.contextserviceapi.embeddingmodel"
+          },
+          "tags" : "Element,Component,Context Service,Service Component",
+          "technology" : "Python"
+        } ],
         "description" : "Converts user prompts to vector embeddings and repackages the query for optimal response quality",
         "documentation" : { },
-        "id" : "13",
+        "id" : "28",
         "name" : "Context API",
         "properties" : {
           "structurizr.dsl.identifier" : "sarcsystem.contextserviceapi"
         },
         "relationships" : [ {
-          "description" : "Forwards the prompt embeddings generated by the embedding model",
-          "destinationId" : "15",
-          "id" : "16",
-          "properties" : {
-            "structurizr.dsl.identifier" : "6c20c711-c382-4544-b8e9-3f5739188747"
-          },
-          "sourceId" : "13",
-          "tags" : "Relationship",
-          "technology" : "[HTTPS]"
+          "description" : "Forwards the prompt token embeddings generated by the embedding model",
+          "destinationId" : "34",
+          "id" : "36",
+          "linkedRelationshipId" : "35",
+          "sourceId" : "28",
+          "technology" : "HTTPS"
         } ],
         "tags" : "Element,Container,Context Service,Service API",
         "technology" : "Python and FastAPI"
       }, {
+        "components" : [ {
+          "description" : "Forwards the optimized prompt to the LLM",
+          "documentation" : { },
+          "id" : "37",
+          "name" : "Prompt Optimizer Controller",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sarcsystem.promptoptimizationserviceapi.optimizercontroller"
+          },
+          "relationships" : [ {
+            "description" : "Gets prompt token embeddings from",
+            "destinationId" : "30",
+            "id" : "38",
+            "properties" : {
+              "structurizr.dsl.identifier" : "99506141-7cf3-4f2a-9097-ff4ab350c4ad"
+            },
+            "sourceId" : "37",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Gets prompt token embeddings from",
+            "destinationId" : "28",
+            "id" : "39",
+            "linkedRelationshipId" : "38",
+            "sourceId" : "37"
+          }, {
+            "description" : "Gets optimized prompt from",
+            "destinationId" : "42",
+            "id" : "43",
+            "properties" : {
+              "structurizr.dsl.identifier" : "81d5be72-0f74-4480-aa2a-46006edf6d8f"
+            },
+            "sourceId" : "37",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component,Prompt Optimization Service,Service Component",
+          "technology" : "LangServe Chain Route"
+        }, {
+          "description" : "Compiles vector embeddings, snippets of relevant context and optimizes the prompts",
+          "documentation" : { },
+          "id" : "42",
+          "name" : "Prompt Optimizer",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sarcsystem.promptoptimizationserviceapi.optimizer"
+          },
+          "tags" : "Element,Component,Prompt Optimization Service,Service Component",
+          "technology" : "Python and LangChain"
+        } ],
         "description" : "Optimizes the provided prompt with relevant embeddings",
         "documentation" : { },
         "group" : "Prompt Optimization Service",
-        "id" : "15",
+        "id" : "34",
         "name" : "Prompt Optimization API",
         "properties" : {
           "structurizr.dsl.identifier" : "sarcsystem.promptoptimizationserviceapi"
         },
         "relationships" : [ {
+          "description" : "Gets prompt token embeddings from",
+          "destinationId" : "30",
+          "id" : "40",
+          "linkedRelationshipId" : "38",
+          "sourceId" : "34"
+        }, {
+          "description" : "Gets prompt token embeddings from",
+          "destinationId" : "28",
+          "id" : "41",
+          "linkedRelationshipId" : "38",
+          "sourceId" : "34"
+        }, {
           "description" : "Reads from and writes to",
-          "destinationId" : "17",
-          "id" : "18",
+          "destinationId" : "44",
+          "id" : "45",
           "properties" : {
-            "structurizr.dsl.identifier" : "37652dec-f379-427d-a8aa-22a233a98c31"
+            "structurizr.dsl.identifier" : "e2e2f5c2-f4cd-4a85-8c9a-96530f088ca9"
           },
-          "sourceId" : "15",
+          "sourceId" : "34",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container,Prompt Optimization Service,Service API",
-        "technology" : "Python and FastAPI"
+        "technology" : "Python and LangServe"
       }, {
         "description" : "Performs a lookup",
         "documentation" : { },
         "group" : "Prompt Optimization Service",
-        "id" : "17",
+        "id" : "44",
         "name" : "Prompt Optimization API Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "sarcsystem.0da0cc3b-878e-4cef-9792-14f09b074e21"
+          "structurizr.dsl.identifier" : "sarcsystem.4f362452-916c-4c48-8b08-2298b1f017e1"
         },
         "tags" : "Element,Container,Prompt Optimization Service,Database",
         "technology" : "Pinecone"
@@ -206,7 +484,7 @@
         "description" : "Serves as the interface to the fine-tuned LLM",
         "documentation" : { },
         "group" : "LLM Service",
-        "id" : "19",
+        "id" : "46",
         "name" : "LLM API",
         "properties" : {
           "structurizr.dsl.identifier" : "sarcsystem.llmserviceapi"
@@ -214,30 +492,30 @@
         "relationships" : [ {
           "description" : "Streams the LLM response to",
           "destinationId" : "6",
-          "id" : "21",
+          "id" : "48",
           "properties" : {
-            "structurizr.dsl.identifier" : "f95b4f60-4f12-4eb9-a68c-36d99ab53307"
+            "structurizr.dsl.identifier" : "9276f257-cad8-48d4-a389-6da587d8ceac"
           },
-          "sourceId" : "19",
+          "sourceId" : "46",
           "tags" : "Relationship",
-          "technology" : "[HTTPS]"
+          "technology" : "HTTPS"
         }, {
           "description" : "Reads from and writes to",
-          "destinationId" : "22",
-          "id" : "23",
+          "destinationId" : "49",
+          "id" : "50",
           "properties" : {
-            "structurizr.dsl.identifier" : "5d234924-2829-43ba-9c65-448dea019eb2"
+            "structurizr.dsl.identifier" : "da704e11-c627-43a5-acb5-ef0dcbe034b8"
           },
-          "sourceId" : "19",
+          "sourceId" : "46",
           "tags" : "Relationship"
         }, {
           "description" : "Reads from",
-          "destinationId" : "24",
-          "id" : "25",
+          "destinationId" : "51",
+          "id" : "52",
           "properties" : {
-            "structurizr.dsl.identifier" : "b520941f-b13b-4363-944f-57dc3476e8b6"
+            "structurizr.dsl.identifier" : "8863deff-554d-4cee-9a23-b9f3852ed323"
           },
-          "sourceId" : "19",
+          "sourceId" : "46",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container,LLM Service,Service API",
@@ -246,10 +524,10 @@
         "description" : "Stores the fine-tuned LLM model",
         "documentation" : { },
         "group" : "LLM Service",
-        "id" : "22",
+        "id" : "49",
         "name" : "LLM API Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "sarcsystem.dc7af896-8e15-4fbd-9d5f-1af3b0422b7a"
+          "structurizr.dsl.identifier" : "sarcsystem.4d7df3ce-d608-4e6c-8da5-db73b36079e0"
         },
         "tags" : "Element,Container,LLM Service,Database",
         "technology" : "Pinecone"
@@ -257,34 +535,101 @@
         "description" : "Provides structured domain-specific knowledge for Software Architecture concepts",
         "documentation" : { },
         "group" : "LLM Service",
-        "id" : "24",
+        "id" : "51",
         "name" : "LLM API Knowledge Graph",
         "properties" : {
-          "structurizr.dsl.identifier" : "sarcsystem.08630610-a306-4047-9721-52b12cffb902"
+          "structurizr.dsl.identifier" : "sarcsystem.da184c00-d9a7-4cd8-94ae-f407730437a3"
         },
         "tags" : "Element,Container,LLM Service,Database",
         "technology" : "Neo4j"
       }, {
-        "description" : "Forwards payment processing requests to the payment system",
+        "description" : "Forwards email requests and text messaging requests to the communication system",
         "documentation" : { },
-        "id" : "26",
-        "name" : "Payment Proxy API",
+        "id" : "53",
+        "name" : "Communication Facade API",
         "properties" : {
-          "structurizr.dsl.identifier" : "sarcsystem.paymentproxyapi"
+          "structurizr.dsl.identifier" : "sarcsystem.communicationsfacadeapi"
         },
         "relationships" : [ {
-          "description" : "Sends payment processing requests for user subscriptions to",
-          "destinationId" : "28",
-          "id" : "29",
+          "description" : "Forwards email and text message requests to",
+          "destinationId" : "63",
+          "id" : "64",
           "properties" : {
-            "structurizr.dsl.identifier" : "54d25ec7-f885-4834-82a1-730a69ac3179"
+            "structurizr.dsl.identifier" : "9dc37852-d08b-49a5-889d-65379aca77ac"
           },
-          "sourceId" : "26",
+          "sourceId" : "53",
           "tags" : "Relationship",
-          "technology" : "[HTTPS]"
+          "technology" : "HTTPS"
         } ],
-        "tags" : "Element,Container,Payment Proxy Service,Service API",
-        "technology" : "Python and FastAPI"
+        "tags" : "Element,Container,Communication Facade Service,Service API",
+        "technology" : "NodeJS and Express"
+      }, {
+        "components" : [ {
+          "description" : "Provides a wrapper around main API calls to the external Payment System",
+          "documentation" : { },
+          "id" : "57",
+          "name" : "Payment Controller",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sarcsystem.paymentfacadeapi.paymentcontroller"
+          },
+          "relationships" : [ {
+            "description" : "Reads from and writes to",
+            "destinationId" : "60",
+            "id" : "61",
+            "properties" : {
+              "structurizr.dsl.identifier" : "10c0be7a-356f-4e75-ae53-1e0b38d5057e"
+            },
+            "sourceId" : "57",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Sends payment processing requests for user subscriptions to",
+            "destinationId" : "66",
+            "id" : "67",
+            "properties" : {
+              "structurizr.dsl.identifier" : "995126eb-aec1-4f03-b011-47bec2cd7a96"
+            },
+            "sourceId" : "57",
+            "tags" : "Relationship",
+            "technology" : "HTTPS"
+          } ],
+          "tags" : "Element,Component,Payment Facade Service,Service Component",
+          "technology" : "Spring Boot Controller"
+        } ],
+        "description" : "Forwards payment processing requests to the payment system",
+        "documentation" : { },
+        "group" : "Payment Facade Service",
+        "id" : "55",
+        "name" : "Payment Facade API",
+        "properties" : {
+          "structurizr.dsl.identifier" : "sarcsystem.paymentfacadeapi"
+        },
+        "relationships" : [ {
+          "description" : "Reads from and writes to",
+          "destinationId" : "60",
+          "id" : "62",
+          "linkedRelationshipId" : "61",
+          "sourceId" : "55"
+        }, {
+          "description" : "Sends payment processing requests for user subscriptions to",
+          "destinationId" : "66",
+          "id" : "68",
+          "linkedRelationshipId" : "67",
+          "sourceId" : "55",
+          "technology" : "HTTPS"
+        } ],
+        "tags" : "Element,Container,Payment Facade Service,Service API",
+        "technology" : "Kotlin and Spring Boot"
+      }, {
+        "description" : "Tracks user subscription information",
+        "documentation" : { },
+        "group" : "Payment Facade Service",
+        "id" : "60",
+        "name" : "Payment Facade API Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "sarcsystem.0da3f0c9-fde0-441b-97d9-0954f150c186"
+        },
+        "tags" : "Element,Container,Payment Facade Service,Database",
+        "technology" : "PostgreSQL"
       } ],
       "documentation" : { },
       "id" : "2",
@@ -294,18 +639,35 @@
         "structurizr.dsl.identifier" : "sarcsystem"
       },
       "relationships" : [ {
-        "description" : "Sends payment processing requests for user subscriptions to",
-        "destinationId" : "28",
-        "id" : "30",
-        "linkedRelationshipId" : "29",
+        "description" : "Forwards email and text message requests to",
+        "destinationId" : "63",
+        "id" : "65",
+        "linkedRelationshipId" : "64",
         "sourceId" : "2",
-        "technology" : "[HTTPS]"
+        "technology" : "HTTPS"
+      }, {
+        "description" : "Sends payment processing requests for user subscriptions to",
+        "destinationId" : "66",
+        "id" : "69",
+        "linkedRelationshipId" : "67",
+        "sourceId" : "2",
+        "technology" : "HTTPS"
       } ],
       "tags" : "Element,Software System"
     }, {
+      "description" : "Facilitates all email and text messaging processing functionalities",
+      "documentation" : { },
+      "id" : "63",
+      "location" : "Unspecified",
+      "name" : "Communications System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "communicationssystem"
+      },
+      "tags" : "Element,Software System,External System"
+    }, {
       "description" : "Facilitates all payment processing functionalities",
       "documentation" : { },
-      "id" : "28",
+      "id" : "66",
       "location" : "Unspecified",
       "name" : "Payment System",
       "properties" : {
@@ -316,14 +678,192 @@
   },
   "name" : "Name",
   "properties" : {
-    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICAhaWRlbnRpZmllcnMgaGllcmFyY2hpY2FsCgogICAgbW9kZWwgewogICAgICAgIHVzZXIgPSBwZXJzb24gIlVzZXIiCgogICAgICAgIHNBcmNTeXN0ZW0gPSBzb2Z0d2FyZVN5c3RlbSAiUy1BUkMgU3lzdGVtIiB7CiAgICAgICAgICAgIHdlYkFwcGxpY2F0aW9uID0gY29udGFpbmVyICJXZWIgQXBwbGljYXRpb24iICJEZWxpdmVycyB0aGUgc3RhdGljIGNvbnRlbnQgYW5kIHRoZSBjaGF0IGludGVyZmFjZSBzaW5nbGUgcGFnZSBhcHBsaWNhdGlvbiIgIlB5dGhvbiBhbmQgRmFzdEFQSSIgewogICAgICAgICAgICAgICAgdXNlciAtPiB0aGlzICJWaXNpdHMgY2hhdC5zLWFyYy5jb20gdXNpbmciICJbSFRUUFNdIgogICAgICAgICAgICB9CgogICAgICAgICAgICBzaW5nbGVQYWdlQXBwbGljYXRpb24gPSBjb250YWluZXIgIlNpbmdsZSBQYWdlIEFwcGxpY2F0aW9uIiAiUHJvdmlkZXMgYSBjaGF0IGludGVyZmFjZSB0byBpbnRlcmFjdCB3aXRoIHRoZSBMTE0iICJUeXBlc2NyaXB0IGFuZCBSZWFjdCIgewogICAgICAgICAgICAgICAgd2ViQXBwbGljYXRpb24gLT4gdGhpcyAiRGVsaXZlcnMgdG8gdGhlIHVzZXIncyB3ZWIgYnJvd3NlciIKICAgICAgICAgICAgICAgIHVzZXIgLT4gdGhpcyAiSW50ZXJhY3RzIHdpdGggdGhlIExMTSB0aHJvdWdoIGEgY2hhdCBpbnRlcmZhY2UgdXNpbmciICJbSFRUUFNdIgogICAgICAgICAgICB9CgogICAgICAgICAgICBhdXRoZW50aWNhdGlvblNlcnZpY2UgPSBncm91cCAiQXV0aGVudGljYXRpb24gU2VydmljZSIgewogICAgICAgICAgICAgICAgYXV0aGVudGljYXRpb25TZXJ2aWNlQXBpID0gY29udGFpbmVyICJBdXRoZW50aWNhdGlvbiBBUEkiICJQcm92aWRlcyB1c2VyIGF1dGhlbnRpY2F0aW9uIGFuZCBhdXRob3JpemF0aW9uIGZ1bmN0aW9uYWxpdHkiICJLb3RsaW4gYW5kIFNwcmluZyBCb290IiB7CiAgICAgICAgICAgICAgICAgICAgdGFncyAiQXV0aGVudGljYXRpb24gU2VydmljZSIgIlNlcnZpY2UgQVBJIgogICAgICAgICAgICAgICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiAtPiB0aGlzICJSZXF1ZXN0cyBhdXRoZW50aWNhdGlvbiBhbmQgYXV0aG9yaXphdGlvbiB0b2tlbnMgZnJvbSIgIltIVFRQU10iCiAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgY29udGFpbmVyICJBdXRoZW50aWNhdGlvbiBBUEkgRGF0YWJhc2UiICJTdG9yZXMgdXNlciBpbmZvcm1hdGlvbiIgIlBvc3RncmVTUUwiIHsKICAgICAgICAgICAgICAgICAgICB0YWdzICJBdXRoZW50aWNhdGlvbiBTZXJ2aWNlIiAiRGF0YWJhc2UiCiAgICAgICAgICAgICAgICAgICAgYXV0aGVudGljYXRpb25TZXJ2aWNlQXBpIC0+IHRoaXMgIlJlYWRzIGZyb20gYW5kIHdyaXRlcyB0byIgIltUQ1AvU1FMXSIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQoKICAgICAgICAgICAgIyBUaGlzIGlzIGEgc3RhdGVsZXNzIHNlcnZpY2UgYXMgd2VsbC4gSXQgcmVsaWVzIG9uIHRoZSBkZXBsb3ltZWQgZW1iZWRkaW5nIG1vZGVsIHRvIHJldHVybiByZWxldmFudCBlbWJlZGRpbmdzLgogICAgICAgICAgICBjb250ZXh0U2VydmljZUFwaSA9IGNvbnRhaW5lciAiQ29udGV4dCBBUEkiICJDb252ZXJ0cyB1c2VyIHByb21wdHMgdG8gdmVjdG9yIGVtYmVkZGluZ3MgYW5kIHJlcGFja2FnZXMgdGhlIHF1ZXJ5IGZvciBvcHRpbWFsIHJlc3BvbnNlIHF1YWxpdHkiICJQeXRob24gYW5kIEZhc3RBUEkiIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkNvbnRleHQgU2VydmljZSIgIlNlcnZpY2UgQVBJIgogICAgICAgICAgICAgICAgc2luZ2xlUGFnZUFwcGxpY2F0aW9uIC0+IHRoaXMgIlNlbmRzIG5hdHVyYWwgbGFuZ3VhZ2UgcHJvbXB0IHRvIiAiW0hUVFBTXSIKICAgICAgICAgICAgfQoKICAgICAgICAgICAgIyBJdCdzIHVzZWZ1bCB0byBoYXZlIHRoaXMgYXMgYSBzZXBhcmF0ZSBzZXJ2aWNlIGJlY2F1c2UgdGhpcyB3aWxsIG5lZWQgdG8gYmUgZG9uZSBmb3IKICAgICAgICAgICAgIyBlYWNoIHByb21wdCB0aGF0IGEgdXNlciBzZW5kcy4gVGhpcyB3YXksIHdlIGNhbiBzY2FsZSBpbmRlcGRlbnRseSB0byBtYWludGFpbiBwZXJmb3JtYW5jZSBleHBlY3RhdGlvbnMuCiAgICAgICAgICAgIHByb21wdE9wdGltaXphdGlvblNlcnZpY2UgPSBncm91cCAiUHJvbXB0IE9wdGltaXphdGlvbiBTZXJ2aWNlIiB7CiAgICAgICAgICAgICAgICBwcm9tcHRPcHRpbWl6YXRpb25TZXJ2aWNlQXBpID0gY29udGFpbmVyICJQcm9tcHQgT3B0aW1pemF0aW9uIEFQSSIgIk9wdGltaXplcyB0aGUgcHJvdmlkZWQgcHJvbXB0IHdpdGggcmVsZXZhbnQgZW1iZWRkaW5ncyIgIlB5dGhvbiBhbmQgRmFzdEFQSSIgewogICAgICAgICAgICAgICAgICAgIHRhZ3MgIlByb21wdCBPcHRpbWl6YXRpb24gU2VydmljZSIgIlNlcnZpY2UgQVBJIgogICAgICAgICAgICAgICAgICAgIGNvbnRleHRTZXJ2aWNlQXBpIC0+IHRoaXMgIkZvcndhcmRzIHRoZSBwcm9tcHQgZW1iZWRkaW5ncyBnZW5lcmF0ZWQgYnkgdGhlIGVtYmVkZGluZyBtb2RlbCIgIltIVFRQU10iCiAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgY29udGFpbmVyICJQcm9tcHQgT3B0aW1pemF0aW9uIEFQSSBEYXRhYmFzZSIgIlBlcmZvcm1zIGEgbG9va3VwICIgIlBpbmVjb25lIiB7CiAgICAgICAgICAgICAgICAgICAgdGFncyAiUHJvbXB0IE9wdGltaXphdGlvbiBTZXJ2aWNlIiAiRGF0YWJhc2UiCiAgICAgICAgICAgICAgICAgICAgcHJvbXB0T3B0aW1pemF0aW9uU2VydmljZUFwaSAtPiB0aGlzICJSZWFkcyBmcm9tIGFuZCB3cml0ZXMgdG8iCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGxsbVNlcnZpY2UgPSBncm91cCAiTExNIFNlcnZpY2UiIHsKICAgICAgICAgICAgICAgIGxsbVNlcnZpY2VBcGkgPSBjb250YWluZXIgIkxMTSBBUEkiICJTZXJ2ZXMgYXMgdGhlIGludGVyZmFjZSB0byB0aGUgZmluZS10dW5lZCBMTE0iICJQeXRob24gYW5kIEZhc3RBUEkiIHsKICAgICAgICAgICAgICAgICAgICB0YWdzICJMTE0gU2VydmljZSIgIlNlcnZpY2UgQVBJIgogICAgICAgICAgICAgICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiAtPiB0aGlzICJNYWtlcyBBUEkgY2FsbHMgdG8iICJbSFRUUFNdIgogICAgICAgICAgICAgICAgICAgIHRoaXMgLT4gc2luZ2xlUGFnZUFwcGxpY2F0aW9uICJTdHJlYW1zIHRoZSBMTE0gcmVzcG9uc2UgdG8iICJbSFRUUFNdIgogICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgIGNvbnRhaW5lciAiTExNIEFQSSBEYXRhYmFzZSIgIlN0b3JlcyB0aGUgZmluZS10dW5lZCBMTE0gbW9kZWwiICJQaW5lY29uZSJ7CiAgICAgICAgICAgICAgICAgICAgdGFncyAiTExNIFNlcnZpY2UiICJEYXRhYmFzZSIKICAgICAgICAgICAgICAgICAgICBsbG1TZXJ2aWNlQXBpIC0+IHRoaXMgIlJlYWRzIGZyb20gYW5kIHdyaXRlcyB0byIKICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgICAgICBjb250YWluZXIgIkxMTSBBUEkgS25vd2xlZGdlIEdyYXBoIiAiUHJvdmlkZXMgc3RydWN0dXJlZCBkb21haW4tc3BlY2lmaWMga25vd2xlZGdlIGZvciBTb2Z0d2FyZSBBcmNoaXRlY3R1cmUgY29uY2VwdHMiICJOZW80aiIgewogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkxMTSBTZXJ2aWNlIiAiRGF0YWJhc2UiCiAgICAgICAgICAgICAgICAgICAgbGxtU2VydmljZUFwaSAtPiB0aGlzICJSZWFkcyBmcm9tIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CgogICAgICAgICAgICAjIFRoaXMgaXMgYSBzdGF0ZWxlc3Mgc2VydmljZSBzbyBubyBkYXRhYmFzZS4gSXQgb25seSBleGlzdHMgdG8gbWFrZSBBUEkgY2FsbHMgdG8gdGhlIGFjdHVhbCBwYXltZW50IGdhdGV3YXkuCiAgICAgICAgICAgIHBheW1lbnRQcm94eUFwaSA9IGNvbnRhaW5lciAiUGF5bWVudCBQcm94eSBBUEkiICJGb3J3YXJkcyBwYXltZW50IHByb2Nlc3NpbmcgcmVxdWVzdHMgdG8gdGhlIHBheW1lbnQgc3lzdGVtIiAiUHl0aG9uIGFuZCBGYXN0QVBJIiB7CiAgICAgICAgICAgICAgICB0YWdzICJQYXltZW50IFByb3h5IFNlcnZpY2UiICJTZXJ2aWNlIEFQSQogICAgICAgICAgICAgICAgc2luZ2xlUGFnZUFwcGxpY2F0aW9uIC0+IHRoaXMgIk1ha2VzIEFQSSBjYWxscyB0byIgIltIVFRQU10iCiAgICAgICAgICAgIH0KICAgICAgICB9CgogICAgICAgIHBheW1lbnRTeXN0ZW0gPSBzb2Z0d2FyZXN5c3RlbSAiUGF5bWVudCBTeXN0ZW0iICJGYWNpbGl0YXRlcyBhbGwgcGF5bWVudCBwcm9jZXNzaW5nIGZ1bmN0aW9uYWxpdGllcyIgewogICAgICAgICAgICB0YWdzICJFeHRlcm5hbCBTeXN0ZW0iCiAgICAgICAgICAgIHNBcmNTeXN0ZW0ucGF5bWVudFByb3h5QXBpIC0+IHRoaXMgIlNlbmRzIHBheW1lbnQgcHJvY2Vzc2luZyByZXF1ZXN0cyBmb3IgdXNlciBzdWJzY3JpcHRpb25zIHRvIiAiW0hUVFBTXSIKICAgICAgICB9CiAgICB9CgogICAgdmlld3MgewogICAgICAgIHN5c3RlbUNvbnRleHQgc0FyY1N5c3RlbSB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgY29udGFpbmVyIHNBcmNTeXN0ZW0gewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICB9CgogICAgICAgIHRoZW1lIGRlZmF1bHQKCiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAgZWxlbWVudCAiUGVyc29uIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBQZXJzb24KICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJTZXJ2aWNlIEFQSSIgewogICAgICAgICAgICAgICAgc2hhcGUgaGV4YWdvbgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkRhdGFiYXNlIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBjeWxpbmRlcgogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfQoKICAgIGNvbmZpZ3VyYXRpb24gewogICAgICAgIHNjb3BlIHNvZnR3YXJlc3lzdGVtCiAgICB9Cn0K"
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICAhaWRlbnRpZmllcnMgaGllcmFyY2hpY2FsCgogICAgbW9kZWwgewogICAgICAgIHVzZXIgPSBwZXJzb24gIlVzZXIiCgogICAgICAgIHNBcmNTeXN0ZW0gPSBzb2Z0d2FyZVN5c3RlbSAiUy1BUkMgU3lzdGVtIiB7CiAgICAgICAgICAgIHdlYkFwcGxpY2F0aW9uID0gY29udGFpbmVyICJXZWIgQXBwbGljYXRpb24iICJEZWxpdmVycyB0aGUgc3RhdGljIGNvbnRlbnQgYW5kIHRoZSBjaGF0IGludGVyZmFjZSBzaW5nbGUgcGFnZSBhcHBsaWNhdGlvbiIgIlB5dGhvbiBhbmQgRmFzdEFQSSIgewogICAgICAgICAgICAgICAgdGFncyAiV2ViIEJyb3dzZXIiCiAgICAgICAgICAgICAgICB1c2VyIC0+IHRoaXMgIlZpc2l0cyBjaGF0LnMtYXJjLmNvbSB1c2luZyIgIkhUVFBTIgogICAgICAgICAgICB9CgogICAgICAgICAgICBzaW5nbGVQYWdlQXBwbGljYXRpb24gPSBjb250YWluZXIgIlNpbmdsZSBQYWdlIEFwcGxpY2F0aW9uIiAiUHJvdmlkZXMgYSBjaGF0IGludGVyZmFjZSB0byBpbnRlcmFjdCB3aXRoIHRoZSBMTE0iICJUeXBlc2NyaXB0IGFuZCBSZWFjdCIgewogICAgICAgICAgICAgICAgdGFncyAiV2ViIEJyb3dzZXIiCiAgICAgICAgICAgICAgICB3ZWJBcHBsaWNhdGlvbiAtPiB0aGlzICJEZWxpdmVycyB0byB0aGUgdXNlcidzIHdlYiBicm93c2VyIgogICAgICAgICAgICAgICAgdXNlciAtPiB0aGlzICJJbnRlcmFjdHMgd2l0aCB0aGUgTExNIHRocm91Z2ggYSBjaGF0IGludGVyZmFjZSB1c2luZyIgIkhUVFBTIgogICAgICAgICAgICB9CgogICAgICAgICAgICBhdXRoU2VydmljZSA9IGdyb3VwICJBdXRoIFNlcnZpY2UiIHsKICAgICAgICAgICAgICAgIGF1dGhTZXJ2aWNlQXBpID0gY29udGFpbmVyICJBdXRoIEFQSSIgIlByb3ZpZGVzIHVzZXIgYXV0aGVudGljYXRpb24gYW5kIGF1dGhvcml6YXRpb24gZnVuY3Rpb25hbGl0eSIgIktvdGxpbiBhbmQgU3ByaW5nIEJvb3QiIHsKICAgICAgICAgICAgICAgICAgICB0YWdzICJBdXRoIFNlcnZpY2UiICJTZXJ2aWNlIEFQSSIKCiAgICAgICAgICAgICAgICAgICAgc2lnbkluQ29udHJvbGxlciA9IGNvbXBvbmVudCAiU2lnbiBJbiBDb250cm9sbGVyIiAiQWxsb3dzIHVzZXJzIHRvIHNpZ24gaW50byB0aGUgUy1BUkMgU3lzdGVtIiAiU3ByaW5nIEJvb3QgQ29udHJvbGxlciIgewogICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJBdXRoIFNlcnZpY2UiICJTZXJ2aWNlIENvbXBvbmVudCIKICAgICAgICAgICAgICAgICAgICAgICAgc2luZ2xlUGFnZUFwcGxpY2F0aW9uIC0+IHRoaXMgIk1ha2VzIGF1dGggcmVxdWVzdHMgdG8iICJIVFRQUyIKICAgICAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgICAgIHNpZ25VcENvbnRyb2xsZXIgPSBjb21wb25lbnQgIlNpZ24gVXAgQ29udHJvbGxlciIgIkFsbG93cyB1c2VycyB0byBzaWduIHVwIGZvciB0aGUgUy1BUkMgU3lzdGVtIiAiU3ByaW5nIEJvb3QgQ29udHJvbGxlciIgewogICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJBdXRoIFNlcnZpY2UiICJTZXJ2aWNlIENvbXBvbmVudCIKICAgICAgICAgICAgICAgICAgICAgICAgc2luZ2xlUGFnZUFwcGxpY2F0aW9uIC0+IHRoaXMgIlJlcXVlc3RzIG5ldyBhY2NvdW50IGNyZWF0aW9uIGZyb20iICJIVFRQUyIKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgcmVzZXRQYXNzd29yZENvbnRyb2xsZXIgPSBjb21wb25lbnQgIlJlc2V0IFBhc3N3b3JkIENvbnRyb2xsZXIiICJBbGxvd3MgdXNlcnMgdG8gcmVzZXQgdGhlaXIgcGFzc3dvcmQgd2l0aCBhIG9uZS10aW1lIFVSTCIgIlNwcmluZyBCb290IENvbnRyb2xsZXIiIHsKICAgICAgICAgICAgICAgICAgICAgICAgdGFncyAiQXV0aCBTZXJ2aWNlIiAiU2VydmljZSBDb21wb25lbnQiCiAgICAgICAgICAgICAgICAgICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiAtPiB0aGlzICJSZXF1ZXN0cyBwYXNzd29yZCByZXNldCBmcm9tIiAiSFRUUFMiCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgIHJlZnJlc2hUb2tlbkNvbnRyb2xsZXIgPSBjb21wb25lbnQgIlJlZnJlc2ggVG9rZW4gQ29udHJvbGxlciIgIkFsbG93cyB1c2VycyB0byByZWZyZXNoIHRoZWlyIGF1dGhlbnRpY2F0aW9uIHRva2VucyIgIlNwcmluZyBCb290IENvbnRyb2xsZXIiIHsKICAgICAgICAgICAgICAgICAgICAgICAgdGFncyAiQXV0aCBTZXJ2aWNlIiAiU2VydmljZSBDb21wb25lbnQiCiAgICAgICAgICAgICAgICAgICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiAtPiB0aGlzICJSZXF1ZXN0cyBuZXcgYXV0aCB0b2tlbnMgZnJvbSIgIkhUVFBTIgogICAgICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgICAgICAgICAgc3ByaW5nU2VjdXJpdHkgPSBjb21wb25lbnQgIlNwcmluZyBTZWN1cml0eSIgIlByb3ZpZGVzIGF1dGhlbnRpY2F0aW9uIGFuZCBhdXRob3JpemF0aW9uIGZ1bmN0aW9uYWxpdHkiICJTcHJpbmcgQmVhbiIgewogICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJBdXRoIFNlcnZpY2UiICJTZXJ2aWNlIENvbXBvbmVudCIKICAgICAgICAgICAgICAgICAgICAgICAgc2lnbkluQ29udHJvbGxlciAtPiB0aGlzICJEZWxlZ2F0ZXMgYXV0aGVudGljYXRpb24gYW5kIGF1dGhvcml6YXRpb24gdG8iCiAgICAgICAgICAgICAgICAgICAgICAgIHNpZ25VcENvbnRyb2xsZXIgLT4gdGhpcyAiRGVsZWdhdGVzIGF1dGhlbnRpY2F0aW9uIGFuZCBhdXRob3JpemF0aW9uIHRvIgogICAgICAgICAgICAgICAgICAgICAgICByZXNldFBhc3N3b3JkQ29udHJvbGxlciAtPiB0aGlzICJEZWxlZ2F0ZXMgYXV0aGVudGljYXRpb24gYW5kIGF1dGhvcml6YXRpb24gdG8iCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgIGNvbnRhaW5lciAiQXV0aCBBUEkgRGF0YWJhc2UiICJTdG9yZXMgdXNlciBpbmZvcm1hdGlvbiIgIlBvc3RncmVTUUwiIHsKICAgICAgICAgICAgICAgICAgICB0YWdzICJBdXRoIFNlcnZpY2UiICJEYXRhYmFzZSIKICAgICAgICAgICAgICAgICAgICBhdXRoU2VydmljZUFwaSAtPiB0aGlzICJSZWFkcyBmcm9tIGFuZCB3cml0ZXMgdG8iICJbVENQL1NRTF0iCiAgICAgICAgICAgICAgICAgICAgYXV0aFNlcnZpY2VBcGkuc2lnbkluQ29udHJvbGxlciAtPiB0aGlzICJRdWVyaWVzIGZvciB1c2VyIGluZm9ybWF0aW9uIgogICAgICAgICAgICAgICAgICAgIGF1dGhTZXJ2aWNlQXBpLnNpZ25VcENvbnRyb2xsZXIgLT4gdGhpcyAiV3JpdGVzIHVzZXIgaW5mb3JtYXRpb24iCiAgICAgICAgICAgICAgICAgICAgYXV0aFNlcnZpY2VBcGkucmVzZXRQYXNzd29yZENvbnRyb2xsZXIgLT4gdGhpcyAiVXBkYXRlcyB1c2VyIGluZm9ybWF0aW9uIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CgogICAgICAgICAgICAjIFRoaXMgaXMgYSBzdGF0ZWxlc3Mgc2VydmljZSBhcyB3ZWxsLiBJdCByZWxpZXMgb24gdGhlIGRlcGxveW1lZCBlbWJlZGRpbmcgbW9kZWwgdG8gcmV0dXJuIHJlbGV2YW50IGVtYmVkZGluZ3MuCiAgICAgICAgICAgIGNvbnRleHRTZXJ2aWNlQXBpID0gY29udGFpbmVyICJDb250ZXh0IEFQSSIgIkNvbnZlcnRzIHVzZXIgcHJvbXB0cyB0byB2ZWN0b3IgZW1iZWRkaW5ncyBhbmQgcmVwYWNrYWdlcyB0aGUgcXVlcnkgZm9yIG9wdGltYWwgcmVzcG9uc2UgcXVhbGl0eSIgIlB5dGhvbiBhbmQgRmFzdEFQSSIgewogICAgICAgICAgICAgICAgdGFncyAiQ29udGV4dCBTZXJ2aWNlIiAiU2VydmljZSBBUEkiCiAgICAgICAgICAgICAgICBzaW5nbGVQYWdlQXBwbGljYXRpb24gLT4gdGhpcyAiU2VuZHMgbmF0dXJhbCBsYW5ndWFnZSBwcm9tcHQgdG8iICJIVFRQUyIKCiAgICAgICAgICAgICAgICBlbWJlZGRpbmdDb250cm9sbGVyID0gY29tcG9uZW50ICJFbWJlZGRpbmcgTW9kZWwgQ29udHJvbGxlciIgIkZvcndhcmRzIHRoZSBwcm9tcHQgdG8gdGhlIEVtYmVkZGluZyBNb2RlbCIgIkZhc3RBUEkgQ29udHJvbGxlciIgewogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkNvbnRleHQgU2VydmljZSIgIlNlcnZpY2UgQ29tcG9uZW50IgogICAgICAgICAgICAgICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiAtPiB0aGlzICJGb3J3YXJkcyB0aGUgcHJvbXB0IHRvIiAiSFRUUFMiCiAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgZW1iZWRkaW5nTW9kZWwgPSBjb21wb25lbnQgIkVtYmVkZGluZyBNb2RlbCIgIkdlbmVyYXRlcyBlbWJlZGRpbmdzIGZvciB0aGUgcHJvdmlkZWQgcHJvbXB0IiAiUHl0aG9uIiB7CiAgICAgICAgICAgICAgICAgICAgdGFncyAiQ29udGV4dCBTZXJ2aWNlIiAiU2VydmljZSBDb21wb25lbnQiCiAgICAgICAgICAgICAgICAgICAgZW1iZWRkaW5nQ29udHJvbGxlciAtPiB0aGlzICJHZXRzIHByb21wdCB0b2tlbiBlbWJlZGRpbmdzIGZyb20iCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgICMgSXQncyB1c2VmdWwgdG8gaGF2ZSB0aGlzIGFzIGEgc2VwYXJhdGUgc2VydmljZSBiZWNhdXNlIHRoaXMgd2lsbCBuZWVkIHRvIGJlIGRvbmUgZm9yCiAgICAgICAgICAgICMgZWFjaCBwcm9tcHQgdGhhdCBhIHVzZXIgc2VuZHMuIFRoaXMgd2F5LCB3ZSBjYW4gc2NhbGUgaW5kZXBkZW50bHkgdG8gbWFpbnRhaW4gcGVyZm9ybWFuY2UgZXhwZWN0YXRpb25zLgogICAgICAgICAgICAjIFRoaXMgY2FuIGJlIG1hZGUgaW50byBhIHNlcnZlcmxlc3MgZnVuY3Rpb24KICAgICAgICAgICAgcHJvbXB0T3B0aW1pemF0aW9uU2VydmljZSA9IGdyb3VwICJQcm9tcHQgT3B0aW1pemF0aW9uIFNlcnZpY2UiIHsKICAgICAgICAgICAgICAgIHByb21wdE9wdGltaXphdGlvblNlcnZpY2VBcGkgPSBjb250YWluZXIgIlByb21wdCBPcHRpbWl6YXRpb24gQVBJIiAiT3B0aW1pemVzIHRoZSBwcm92aWRlZCBwcm9tcHQgd2l0aCByZWxldmFudCBlbWJlZGRpbmdzIiAiUHl0aG9uIGFuZCBMYW5nU2VydmUiIHsKICAgICAgICAgICAgICAgICAgICB0YWdzICJQcm9tcHQgT3B0aW1pemF0aW9uIFNlcnZpY2UiICJTZXJ2aWNlIEFQSSIKICAgICAgICAgICAgICAgICAgICBjb250ZXh0U2VydmljZUFwaS5lbWJlZGRpbmdDb250cm9sbGVyIC0+IHRoaXMgIkZvcndhcmRzIHRoZSBwcm9tcHQgdG9rZW4gZW1iZWRkaW5ncyBnZW5lcmF0ZWQgYnkgdGhlIGVtYmVkZGluZyBtb2RlbCIgIkhUVFBTIgoKICAgICAgICAgICAgICAgICAgICBvcHRpbWl6ZXJDb250cm9sbGVyID0gY29tcG9uZW50ICJQcm9tcHQgT3B0aW1pemVyIENvbnRyb2xsZXIiICJGb3J3YXJkcyB0aGUgb3B0aW1pemVkIHByb21wdCB0byB0aGUgTExNIiAiTGFuZ1NlcnZlIENoYWluIFJvdXRlIiB7CiAgICAgICAgICAgICAgICAgICAgICAgIHRhZ3MgIlByb21wdCBPcHRpbWl6YXRpb24gU2VydmljZSIgIlNlcnZpY2UgQ29tcG9uZW50IgogICAgICAgICAgICAgICAgICAgICAgICB0aGlzIC0+IGNvbnRleHRTZXJ2aWNlQXBpLmVtYmVkZGluZ0NvbnRyb2xsZXIgIkdldHMgcHJvbXB0IHRva2VuIGVtYmVkZGluZ3MgZnJvbSIKICAgICAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgICAgIG9wdGltaXplciA9IGNvbXBvbmVudCAiUHJvbXB0IE9wdGltaXplciIgIkNvbXBpbGVzIHZlY3RvciBlbWJlZGRpbmdzLCBzbmlwcGV0cyBvZiByZWxldmFudCBjb250ZXh0IGFuZCBvcHRpbWl6ZXMgdGhlIHByb21wdHMiICJQeXRob24gYW5kIExhbmdDaGFpbiIgewogICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJQcm9tcHQgT3B0aW1pemF0aW9uIFNlcnZpY2UiICJTZXJ2aWNlIENvbXBvbmVudCIKICAgICAgICAgICAgICAgICAgICAgICAgb3B0aW1pemVyQ29udHJvbGxlciAtPiB0aGlzICJHZXRzIG9wdGltaXplZCBwcm9tcHQgZnJvbSIKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgY29udGFpbmVyICJQcm9tcHQgT3B0aW1pemF0aW9uIEFQSSBEYXRhYmFzZSIgIlBlcmZvcm1zIGEgbG9va3VwICIgIlBpbmVjb25lIiB7CiAgICAgICAgICAgICAgICAgICAgdGFncyAiUHJvbXB0IE9wdGltaXphdGlvbiBTZXJ2aWNlIiAiRGF0YWJhc2UiCiAgICAgICAgICAgICAgICAgICAgcHJvbXB0T3B0aW1pemF0aW9uU2VydmljZUFwaSAtPiB0aGlzICJSZWFkcyBmcm9tIGFuZCB3cml0ZXMgdG8iCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGxsbVNlcnZpY2UgPSBncm91cCAiTExNIFNlcnZpY2UiIHsKICAgICAgICAgICAgICAgIGxsbVNlcnZpY2VBcGkgPSBjb250YWluZXIgIkxMTSBBUEkiICJTZXJ2ZXMgYXMgdGhlIGludGVyZmFjZSB0byB0aGUgZmluZS10dW5lZCBMTE0iICJQeXRob24gYW5kIEZhc3RBUEkiIHsKICAgICAgICAgICAgICAgICAgICB0YWdzICJMTE0gU2VydmljZSIgIlNlcnZpY2UgQVBJIgogICAgICAgICAgICAgICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiAtPiB0aGlzICJNYWtlcyBBUEkgY2FsbHMgdG8iICJIVFRQUyIKICAgICAgICAgICAgICAgICAgICB0aGlzIC0+IHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiAiU3RyZWFtcyB0aGUgTExNIHJlc3BvbnNlIHRvIiAiSFRUUFMiCiAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgY29udGFpbmVyICJMTE0gQVBJIERhdGFiYXNlIiAiU3RvcmVzIHRoZSBmaW5lLXR1bmVkIExMTSBtb2RlbCIgIlBpbmVjb25lInsKICAgICAgICAgICAgICAgICAgICB0YWdzICJMTE0gU2VydmljZSIgIkRhdGFiYXNlIgogICAgICAgICAgICAgICAgICAgIGxsbVNlcnZpY2VBcGkgLT4gdGhpcyAiUmVhZHMgZnJvbSBhbmQgd3JpdGVzIHRvIgogICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgIGNvbnRhaW5lciAiTExNIEFQSSBLbm93bGVkZ2UgR3JhcGgiICJQcm92aWRlcyBzdHJ1Y3R1cmVkIGRvbWFpbi1zcGVjaWZpYyBrbm93bGVkZ2UgZm9yIFNvZnR3YXJlIEFyY2hpdGVjdHVyZSBjb25jZXB0cyIgIk5lbzRqIiB7CiAgICAgICAgICAgICAgICAgICAgdGFncyAiTExNIFNlcnZpY2UiICJEYXRhYmFzZSIKICAgICAgICAgICAgICAgICAgICBsbG1TZXJ2aWNlQXBpIC0+IHRoaXMgIlJlYWRzIGZyb20iCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgICMgVGhpcyBjYW4gYmUgbWFkZSBpbnRvIGEgc2VydmVybGVzcyBmdW5jdGlvbgogICAgICAgICAgICBjb21tdW5pY2F0aW9uc0ZhY2FkZUFwaSA9IGNvbnRhaW5lciAiQ29tbXVuaWNhdGlvbiBGYWNhZGUgQVBJIiAiRm9yd2FyZHMgZW1haWwgcmVxdWVzdHMgYW5kIHRleHQgbWVzc2FnaW5nIHJlcXVlc3RzIHRvIHRoZSBjb21tdW5pY2F0aW9uIHN5c3RlbSIgIk5vZGVKUyBhbmQgRXhwcmVzcyIgewogICAgICAgICAgICAgICAgdGFncyAiQ29tbXVuaWNhdGlvbiBGYWNhZGUgU2VydmljZSIgIlNlcnZpY2UgQVBJIgogICAgICAgICAgICAgICAgc2luZ2xlUGFnZUFwcGxpY2F0aW9uIC0+IHRoaXMgIk1ha2VzIEFQSSBjYWxscyB0byIgIkhUVFBTIgogICAgICAgICAgICB9CgogICAgICAgICAgICBwYXltZW50RmFjYWRlID0gZ3JvdXAgIlBheW1lbnQgRmFjYWRlIFNlcnZpY2UiIHsKICAgICAgICAgICAgICAgIHBheW1lbnRGYWNhZGVBcGkgPSBjb250YWluZXIgIlBheW1lbnQgRmFjYWRlIEFQSSIgIkZvcndhcmRzIHBheW1lbnQgcHJvY2Vzc2luZyByZXF1ZXN0cyB0byB0aGUgcGF5bWVudCBzeXN0ZW0iICJLb3RsaW4gYW5kIFNwcmluZyBCb290IiB7CiAgICAgICAgICAgICAgICAgICAgdGFncyAiUGF5bWVudCBGYWNhZGUgU2VydmljZSIgIlNlcnZpY2UgQVBJIgogICAgICAgICAgICAgICAgICAgIGF1dGhTZXJ2aWNlQXBpIC0+IHRoaXMgIlJlcXVlc3RzIHVzZXIgc3Vic2NyaXB0aW9uIGluZm9ybWF0aW9uIGZyb20iICJIVFRQUyIKCiAgICAgICAgICAgICAgICAgICAgcGF5bWVudENvbnRyb2xsZXIgPSBjb21wb25lbnQgIlBheW1lbnQgQ29udHJvbGxlciIgIlByb3ZpZGVzIGEgd3JhcHBlciBhcm91bmQgbWFpbiBBUEkgY2FsbHMgdG8gdGhlIGV4dGVybmFsIFBheW1lbnQgU3lzdGVtIiAiU3ByaW5nIEJvb3QgQ29udHJvbGxlciIgewogICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJQYXltZW50IEZhY2FkZSBTZXJ2aWNlIiAiU2VydmljZSBDb21wb25lbnQiCiAgICAgICAgICAgICAgICAgICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiAtPiB0aGlzICJSZXF1ZXN0cyBwYXltZW50IHByb2Nlc3NpbmcgZnJvbSIgIkhUVFBTIgogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgICAgICBjb250YWluZXIgIlBheW1lbnQgRmFjYWRlIEFQSSBEYXRhYmFzZSIgIlRyYWNrcyB1c2VyIHN1YnNjcmlwdGlvbiBpbmZvcm1hdGlvbiIgIlBvc3RncmVTUUwiIHsKICAgICAgICAgICAgICAgICAgICB0YWdzICJQYXltZW50IEZhY2FkZSBTZXJ2aWNlIiAiRGF0YWJhc2UiCiAgICAgICAgICAgICAgICAgICAgcGF5bWVudEZhY2FkZUFwaS5wYXltZW50Q29udHJvbGxlciAtPiB0aGlzICJSZWFkcyBmcm9tIGFuZCB3cml0ZXMgdG8iCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICB9CgogICAgICAgIGNvbW11bmljYXRpb25zU3lzdGVtID0gc29mdHdhcmVTeXN0ZW0gIkNvbW11bmljYXRpb25zIFN5c3RlbSIgIkZhY2lsaXRhdGVzIGFsbCBlbWFpbCBhbmQgdGV4dCBtZXNzYWdpbmcgcHJvY2Vzc2luZyBmdW5jdGlvbmFsaXRpZXMiIHsKICAgICAgICAgICAgdGFncyAiRXh0ZXJuYWwgU3lzdGVtIgogICAgICAgICAgICBzQXJjU3lzdGVtLmNvbW11bmljYXRpb25zRmFjYWRlQXBpIC0+IHRoaXMgIkZvcndhcmRzIGVtYWlsIGFuZCB0ZXh0IG1lc3NhZ2UgcmVxdWVzdHMgdG8iICJIVFRQUyIKICAgICAgICB9CgogICAgICAgIHBheW1lbnRTeXN0ZW0gPSBzb2Z0d2FyZVN5c3RlbSAiUGF5bWVudCBTeXN0ZW0iICJGYWNpbGl0YXRlcyBhbGwgcGF5bWVudCBwcm9jZXNzaW5nIGZ1bmN0aW9uYWxpdGllcyIgewogICAgICAgICAgICB0YWdzICJFeHRlcm5hbCBTeXN0ZW0iCiAgICAgICAgICAgIHNBcmNTeXN0ZW0ucGF5bWVudEZhY2FkZUFwaS5wYXltZW50Q29udHJvbGxlciAtPiB0aGlzICJTZW5kcyBwYXltZW50IHByb2Nlc3NpbmcgcmVxdWVzdHMgZm9yIHVzZXIgc3Vic2NyaXB0aW9ucyB0byIgIkhUVFBTIgogICAgICAgIH0KICAgIH0KCiAgICB2aWV3cyB7CiAgICAgICAgc3lzdGVtQ29udGV4dCBzQXJjU3lzdGVtICJTLUFSQ19TeXN0ZW0iIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQoKICAgICAgICBjb250YWluZXIgc0FyY1N5c3RlbSAiUy1BUkNfQ29udGFpbmVyIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IHNBcmNTeXN0ZW0uYXV0aFNlcnZpY2VBcGkgIkF1dGhfU2VydmljZV9BUElfQ29tcG9uZW50IiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IHNBcmNTeXN0ZW0ucGF5bWVudEZhY2FkZUFwaSAiUGF5bWVudF9GYWNhZGVfU2VydmljZV9BUElfQ29tcG9uZW50IiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IHNBcmNTeXN0ZW0uY29udGV4dFNlcnZpY2VBcGkgIkNvbnRleHRfU2VydmljZV9BUElfQ29tcG9uZW50IiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IHNBcmNTeXN0ZW0ucHJvbXB0T3B0aW1pemF0aW9uU2VydmljZUFwaSAiUHJvbXB0X09wdGltaXphdGlvbl9TZXJ2aWNlX0FQSV9Db21wb25lbnQiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQoKICAgICAgICB0aGVtZSBkZWZhdWx0CgogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIldlYiBCcm93c2VyIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBXZWJCcm93c2VyCiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGVsZW1lbnQgIlBlcnNvbiIgewogICAgICAgICAgICAgICAgc2hhcGUgUGVyc29uCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiU2VydmljZSBBUEkiIHsKICAgICAgICAgICAgICAgIHNoYXBlIGhleGFnb24KICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJEYXRhYmFzZSIgewogICAgICAgICAgICAgICAgc2hhcGUgY3lsaW5kZXIKICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KCiAgICBjb25maWd1cmF0aW9uIHsKICAgICAgICBzY29wZSBzb2Z0d2FyZXN5c3RlbQogICAgfQp9Cg=="
   },
   "views" : {
+    "componentViews" : [ {
+      "containerId" : "9",
+      "dimensions" : {
+        "height" : 2020,
+        "width" : 3912
+      },
+      "elements" : [ {
+        "id" : "6",
+        "x" : 1454,
+        "y" : 208
+      }, {
+        "id" : "10",
+        "x" : 2579,
+        "y" : 808
+      }, {
+        "id" : "13",
+        "x" : 1829,
+        "y" : 808
+      }, {
+        "id" : "15",
+        "x" : 1079,
+        "y" : 808
+      }, {
+        "id" : "17",
+        "x" : 329,
+        "y" : 808
+      }, {
+        "id" : "19",
+        "x" : 1829,
+        "y" : 1408
+      }, {
+        "id" : "23",
+        "x" : 3225,
+        "y" : 1610
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "Auth_Service_API_Component",
+      "order" : 3,
+      "paperSize" : "A3_Landscape",
+      "relationships" : [ {
+        "id" : "11",
+        "vertices" : [ {
+          "x" : 2429,
+          "y" : 704
+        } ]
+      }, {
+        "id" : "14"
+      }, {
+        "id" : "16"
+      }, {
+        "id" : "18",
+        "vertices" : [ {
+          "x" : 929,
+          "y" : 704
+        } ]
+      }, {
+        "id" : "20"
+      }, {
+        "id" : "21"
+      }, {
+        "id" : "22"
+      }, {
+        "id" : "25"
+      }, {
+        "id" : "26",
+        "vertices" : [ {
+          "x" : 2429,
+          "y" : 1108
+        } ]
+      }, {
+        "id" : "27",
+        "vertices" : [ {
+          "x" : 1679,
+          "y" : 1108
+        } ]
+      } ]
+    }, {
+      "containerId" : "55",
+      "dimensions" : {
+        "height" : 1916,
+        "width" : 1616
+      },
+      "elements" : [ {
+        "id" : "6",
+        "x" : 583,
+        "y" : 208
+      }, {
+        "id" : "57",
+        "x" : 583,
+        "y" : 808
+      }, {
+        "id" : "60",
+        "x" : 208,
+        "y" : 1408
+      }, {
+        "id" : "66",
+        "x" : 958,
+        "y" : 1408
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "Payment_Facade_Service_API_Component",
+      "order" : 4,
+      "paperSize" : "A5_Portrait",
+      "relationships" : [ {
+        "id" : "58"
+      }, {
+        "id" : "61"
+      }, {
+        "id" : "67"
+      } ]
+    }, {
+      "containerId" : "28",
+      "dimensions" : {
+        "height" : 2020,
+        "width" : 1754
+      },
+      "elements" : [ {
+        "id" : "6",
+        "x" : 287,
+        "y" : 214
+      }, {
+        "id" : "30",
+        "x" : 287,
+        "y" : 814
+      }, {
+        "id" : "32",
+        "x" : 287,
+        "y" : 1414
+      }, {
+        "id" : "34",
+        "x" : 1037,
+        "y" : 1414
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "Context_Service_API_Component",
+      "order" : 5,
+      "paperSize" : "A4_Portrait",
+      "relationships" : [ {
+        "id" : "31"
+      }, {
+        "id" : "33"
+      }, {
+        "id" : "35"
+      }, {
+        "id" : "40"
+      } ]
+    }, {
+      "containerId" : "34",
+      "dimensions" : {
+        "height" : 1558,
+        "width" : 1754
+      },
+      "elements" : [ {
+        "id" : "28",
+        "x" : 1079,
+        "y" : 929
+      }, {
+        "id" : "37",
+        "x" : 329,
+        "y" : 329
+      }, {
+        "id" : "42",
+        "x" : 329,
+        "y" : 929
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "Prompt_Optimization_Service_API_Component",
+      "order" : 6,
+      "paperSize" : "A5_Landscape",
+      "relationships" : [ {
+        "id" : "39"
+      }, {
+        "id" : "43"
+      } ]
+    } ],
     "configuration" : {
       "branding" : { },
-      "lastSavedView" : "Container-001",
+      "lastSavedView" : "Prompt_Optimization_Service_API_Component",
       "styles" : {
         "elements" : [ {
+          "shape" : "WebBrowser",
+          "tag" : "Web Browser"
+        }, {
           "shape" : "Person",
           "tag" : "Person"
         }, {
@@ -340,115 +880,148 @@
     "containerViews" : [ {
       "dimensions" : {
         "height" : 4025,
-        "width" : 3266
+        "width" : 4779
       },
       "elements" : [ {
         "id" : "1",
-        "x" : 2295,
-        "y" : 208
+        "x" : 2213,
+        "y" : 123
       }, {
         "id" : "3",
-        "x" : 1933,
-        "y" : 908
+        "x" : 1850,
+        "y" : 823
       }, {
         "id" : "6",
-        "x" : 1933,
-        "y" : 1508
+        "x" : 1850,
+        "y" : 1423
       }, {
         "id" : "9",
-        "x" : 433,
-        "y" : 2108
+        "x" : 1143,
+        "y" : 2020
       }, {
-        "id" : "11",
-        "x" : 433,
-        "y" : 2708
-      }, {
-        "id" : "13",
-        "x" : 1183,
-        "y" : 2108
-      }, {
-        "id" : "15",
-        "x" : 1195,
-        "y" : 2708
-      }, {
-        "id" : "17",
-        "x" : 1195,
-        "y" : 3308
-      }, {
-        "id" : "19",
-        "x" : 1183,
-        "y" : 908
-      }, {
-        "id" : "22",
-        "x" : 433,
-        "y" : 1508
-      }, {
-        "id" : "24",
-        "x" : 1183,
-        "y" : 1508
-      }, {
-        "id" : "26",
-        "x" : 1933,
-        "y" : 2108
+        "id" : "23",
+        "x" : 1143,
+        "y" : 2648
       }, {
         "id" : "28",
-        "x" : 2591,
-        "y" : 2708
+        "x" : 413,
+        "y" : 2020
+      }, {
+        "id" : "34",
+        "x" : 428,
+        "y" : 2800
+      }, {
+        "id" : "44",
+        "x" : 433,
+        "y" : 3435
+      }, {
+        "id" : "46",
+        "x" : 1100,
+        "y" : 823
+      }, {
+        "id" : "49",
+        "x" : 350,
+        "y" : 1423
+      }, {
+        "id" : "51",
+        "x" : 1100,
+        "y" : 1423
+      }, {
+        "id" : "53",
+        "x" : 2608,
+        "y" : 2020
+      }, {
+        "id" : "55",
+        "x" : 1845,
+        "y" : 2020
+      }, {
+        "id" : "60",
+        "x" : 1843,
+        "y" : 2650
+      }, {
+        "id" : "63",
+        "x" : 4017,
+        "y" : 2623
+      }, {
+        "id" : "66",
+        "x" : 3267,
+        "y" : 2623
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
-      "generatedKey" : true,
-      "key" : "Container-001",
+      "key" : "S-ARC_Container",
       "order" : 2,
-      "paperSize" : "A3_Portrait",
       "relationships" : [ {
-        "id" : "10",
-        "vertices" : [ {
-          "x" : 1812,
-          "y" : 1912
-        }, {
-          "x" : 900,
-          "y" : 2004
-        } ]
-      }, {
         "id" : "12"
       }, {
-        "id" : "14"
+        "id" : "24"
       }, {
-        "id" : "16"
-      }, {
-        "id" : "18"
-      }, {
-        "id" : "20",
+        "id" : "29",
         "vertices" : [ {
-          "x" : 1872,
-          "y" : 1259
+          "x" : 1295,
+          "y" : 1756
         } ]
       }, {
-        "id" : "21",
+        "id" : "36",
         "vertices" : [ {
-          "x" : 1693,
-          "y" : 1500
+          "x" : 495,
+          "y" : 2607
         } ]
-      }, {
-        "id" : "23"
-      }, {
-        "id" : "25"
-      }, {
-        "id" : "27"
-      }, {
-        "id" : "29"
       }, {
         "id" : "4"
+      }, {
+        "id" : "41",
+        "vertices" : [ {
+          "x" : 795,
+          "y" : 2601
+        } ]
+      }, {
+        "id" : "45"
+      }, {
+        "id" : "47",
+        "vertices" : [ {
+          "x" : 1789,
+          "y" : 1174
+        } ]
+      }, {
+        "id" : "48",
+        "vertices" : [ {
+          "x" : 1610,
+          "y" : 1415
+        } ]
+      }, {
+        "id" : "50"
+      }, {
+        "id" : "52"
+      }, {
+        "id" : "54"
+      }, {
+        "id" : "56"
+      }, {
+        "id" : "59"
+      }, {
+        "id" : "62"
+      }, {
+        "id" : "64",
+        "vertices" : [ {
+          "x" : 3867,
+          "y" : 2519
+        } ]
+      }, {
+        "id" : "68",
+        "vertices" : [ {
+          "x" : 2500,
+          "y" : 2519
+        } ]
       }, {
         "id" : "7"
       }, {
         "id" : "8",
         "vertices" : [ {
-          "x" : 2533,
-          "y" : 700
+          "x" : 2450,
+          "y" : 615
         }, {
-          "x" : 2533,
-          "y" : 1208
+          "x" : 2450,
+          "y" : 1123
         } ]
       } ],
       "softwareSystemId" : "2"
@@ -456,30 +1029,35 @@
     "systemContextViews" : [ {
       "dimensions" : {
         "height" : 2016,
-        "width" : 866
+        "width" : 1616
       },
       "elements" : [ {
         "id" : "1",
-        "x" : 233,
+        "x" : 608,
         "y" : 208
       }, {
         "id" : "2",
-        "x" : 208,
+        "x" : 583,
         "y" : 908
       }, {
-        "id" : "28",
+        "id" : "63",
         "x" : 208,
+        "y" : 1508
+      }, {
+        "id" : "66",
+        "x" : 958,
         "y" : 1508
       } ],
       "enterpriseBoundaryVisible" : true,
-      "generatedKey" : true,
-      "key" : "SystemContext-001",
+      "key" : "S-ARC_System",
       "order" : 1,
       "paperSize" : "A5_Portrait",
       "relationships" : [ {
-        "id" : "30"
-      }, {
         "id" : "5"
+      }, {
+        "id" : "65"
+      }, {
+        "id" : "69"
       } ],
       "softwareSystemId" : "2"
     } ]
