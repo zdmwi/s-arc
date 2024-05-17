@@ -175,6 +175,7 @@ workspace {
     views {
         systemContext sArcSystem "S-ARC_System" {
             include *
+            autolayout lr
         }
 
         container sArcSystem "S-ARC_Container" {
@@ -183,21 +184,25 @@ workspace {
 
         component sArcSystem.authServiceApi "Auth_Service_API_Component" {
             include *
+            autolayout lr
         }
 
         component sArcSystem.paymentFacadeApi "Payment_Facade_Service_API_Component" {
             include *
+            autolayout lr
         }
 
         component sArcSystem.contextServiceApi "Context_Service_API_Component" {
             include *
+            autolayout lr
         }
 
         component sArcSystem.promptOptimizationServiceApi "Prompt_Optimization_Service_API_Component" {
             include *
+            autolayout lr
         }
 
-        theme default
+        themes default https://static.structurizr.com/themes/amazon-web-services-2023.01.31/theme.json
 
         styles {
             element "API Gateway" {
@@ -218,9 +223,13 @@ workspace {
             element "Message Queue" {
                 shape pipe
             }
+
+            element "Serverless Function" {
+                shape ellipse
+            }
+
             element "External System" {
-                background #bbbbbb 
-                color #ffffff
+                background #bbbbbb
             }
         }
     }
