@@ -118,9 +118,15 @@ workspace {
             }
 
             # This can be made into a serverless function
-            communicationsFacadeApi = container "Communication Facade API" "Forwards email requests and text messaging requests to the communication system" "NodeJS and Express" {
-                tags "Communication Facade Service" "Service API"
-                singlePageApplication -> this "Makes API calls to" "HTTPS"
+            communicationsServerlessFunction = container "Communication Serverless Function" "Forwards email requests and text messaging requests to the communication system" "NodeJS and Serverless" {
+                tags "Communication Facade Service" "Serverless Function"
+            }
+
+            messageQueue = container "Message Queue" "Stores messages for the communication system" "RabbitMQ" {
+                tags "Communication Facade Service" "Message Queue"
+                authServiceApi -> this "Writes messages to" "AMQP"
+
+                communicationsServerlessFunction -> this "Reads messages from" "AMQP"
             }
 
             paymentFacade = group "Payment Facade Service" {
@@ -143,7 +149,7 @@ workspace {
 
         communicationsSystem = softwareSystem "Communications System" "Facilitates all email and text messaging processing functionalities" {
             tags "External System"
-            sArcSystem.communicationsFacadeApi -> this "Forwards email and text message requests to" "HTTPS"
+            sArcSystem.communicationsServerlessFunction -> this "Forwards email and text message requests to" "HTTPS"
         }
 
         paymentSystem = softwareSystem "Payment System" "Facilitates all payment processing functionalities" {
@@ -183,7 +189,6 @@ workspace {
             element "Web Browser" {
                 shape WebBrowser
             }
-
             element "Person" {
                 shape Person
             }
@@ -192,6 +197,9 @@ workspace {
             }
             element "Database" {
                 shape cylinder
+            }
+            element "Message Queue" {
+                shape pipe
             }
         }
     }
