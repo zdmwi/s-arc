@@ -1,0 +1,487 @@
+{
+  "configuration" : {
+    "scope" : "SoftwareSystem"
+  },
+  "description" : "Description",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedDate" : "2024-05-17T16:11:05Z",
+  "model" : {
+    "people" : [ {
+      "id" : "1",
+      "location" : "Unspecified",
+      "name" : "User",
+      "properties" : {
+        "structurizr.dsl.identifier" : "user"
+      },
+      "relationships" : [ {
+        "description" : "Visits chat.s-arc.com using",
+        "destinationId" : "3",
+        "id" : "4",
+        "properties" : {
+          "structurizr.dsl.identifier" : "9572a938-c289-463c-b469-22c77bfc96d0"
+        },
+        "sourceId" : "1",
+        "tags" : "Relationship",
+        "technology" : "[HTTPS]"
+      }, {
+        "description" : "Visits chat.s-arc.com using",
+        "destinationId" : "2",
+        "id" : "5",
+        "linkedRelationshipId" : "4",
+        "sourceId" : "1",
+        "technology" : "[HTTPS]"
+      }, {
+        "description" : "Interacts with the LLM through a chat interface using",
+        "destinationId" : "6",
+        "id" : "8",
+        "properties" : {
+          "structurizr.dsl.identifier" : "97617ca9-b431-4e22-ade1-a7820c69cf2d"
+        },
+        "sourceId" : "1",
+        "tags" : "Relationship",
+        "technology" : "[HTTPS]"
+      } ],
+      "tags" : "Element,Person"
+    } ],
+    "softwareSystems" : [ {
+      "containers" : [ {
+        "description" : "Delivers the static content and the chat interface single page application",
+        "documentation" : { },
+        "id" : "3",
+        "name" : "Web Application",
+        "properties" : {
+          "structurizr.dsl.identifier" : "sarcsystem.webapplication"
+        },
+        "relationships" : [ {
+          "description" : "Delivers to the user's web browser",
+          "destinationId" : "6",
+          "id" : "7",
+          "properties" : {
+            "structurizr.dsl.identifier" : "48dc7d71-b979-4dca-b7e5-3c74d2c5e1fb"
+          },
+          "sourceId" : "3",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Python and FastAPI"
+      }, {
+        "description" : "Provides a chat interface to interact with the LLM",
+        "documentation" : { },
+        "id" : "6",
+        "name" : "Single Page Application",
+        "properties" : {
+          "structurizr.dsl.identifier" : "sarcsystem.singlepageapplication"
+        },
+        "relationships" : [ {
+          "description" : "Requests authentication and authorization tokens from",
+          "destinationId" : "9",
+          "id" : "10",
+          "properties" : {
+            "structurizr.dsl.identifier" : "ba781494-5754-4c4b-bb0f-3f488ce85f1d"
+          },
+          "sourceId" : "6",
+          "tags" : "Relationship",
+          "technology" : "[HTTPS]"
+        }, {
+          "description" : "Sends natural language prompt to",
+          "destinationId" : "13",
+          "id" : "14",
+          "properties" : {
+            "structurizr.dsl.identifier" : "d31e99a3-37a5-43c1-ad0b-2a02cde40792"
+          },
+          "sourceId" : "6",
+          "tags" : "Relationship",
+          "technology" : "[HTTPS]"
+        }, {
+          "description" : "Makes API calls to",
+          "destinationId" : "19",
+          "id" : "20",
+          "properties" : {
+            "structurizr.dsl.identifier" : "1242abc7-bf5b-4fb3-9200-0478d5a271e2"
+          },
+          "sourceId" : "6",
+          "tags" : "Relationship",
+          "technology" : "[HTTPS]"
+        }, {
+          "description" : "Makes API calls to",
+          "destinationId" : "26",
+          "id" : "27",
+          "properties" : {
+            "structurizr.dsl.identifier" : "68cc31b9-2a68-427d-9be8-a828b152d085"
+          },
+          "sourceId" : "6",
+          "tags" : "Relationship",
+          "technology" : "[HTTPS]"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Typescript and React"
+      }, {
+        "description" : "Provides user authentication and authorization functionality",
+        "documentation" : { },
+        "group" : "Authentication Service",
+        "id" : "9",
+        "name" : "Authentication API",
+        "properties" : {
+          "structurizr.dsl.identifier" : "sarcsystem.authenticationserviceapi"
+        },
+        "relationships" : [ {
+          "description" : "Reads from and writes to",
+          "destinationId" : "11",
+          "id" : "12",
+          "properties" : {
+            "structurizr.dsl.identifier" : "80952353-085b-45df-96e7-ba9756441f42"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship",
+          "technology" : "[TCP/SQL]"
+        } ],
+        "tags" : "Element,Container,Authentication Service,Service API",
+        "technology" : "Kotlin and Spring Boot"
+      }, {
+        "description" : "Stores user information",
+        "documentation" : { },
+        "group" : "Authentication Service",
+        "id" : "11",
+        "name" : "Authentication API Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "sarcsystem.c9cb395b-f79f-48bb-a9ba-11d9a4951da2"
+        },
+        "tags" : "Element,Container,Authentication Service,Database",
+        "technology" : "PostgreSQL"
+      }, {
+        "description" : "Converts user prompts to vector embeddings and repackages the query for optimal response quality",
+        "documentation" : { },
+        "id" : "13",
+        "name" : "Context API",
+        "properties" : {
+          "structurizr.dsl.identifier" : "sarcsystem.contextserviceapi"
+        },
+        "relationships" : [ {
+          "description" : "Forwards the prompt embeddings generated by the embedding model",
+          "destinationId" : "15",
+          "id" : "16",
+          "properties" : {
+            "structurizr.dsl.identifier" : "6c20c711-c382-4544-b8e9-3f5739188747"
+          },
+          "sourceId" : "13",
+          "tags" : "Relationship",
+          "technology" : "[HTTPS]"
+        } ],
+        "tags" : "Element,Container,Context Service,Service API",
+        "technology" : "Python and FastAPI"
+      }, {
+        "description" : "Optimizes the provided prompt with relevant embeddings",
+        "documentation" : { },
+        "group" : "Prompt Optimization Service",
+        "id" : "15",
+        "name" : "Prompt Optimization API",
+        "properties" : {
+          "structurizr.dsl.identifier" : "sarcsystem.promptoptimizationserviceapi"
+        },
+        "relationships" : [ {
+          "description" : "Reads from and writes to",
+          "destinationId" : "17",
+          "id" : "18",
+          "properties" : {
+            "structurizr.dsl.identifier" : "37652dec-f379-427d-a8aa-22a233a98c31"
+          },
+          "sourceId" : "15",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Prompt Optimization Service,Service API",
+        "technology" : "Python and FastAPI"
+      }, {
+        "description" : "Performs a lookup",
+        "documentation" : { },
+        "group" : "Prompt Optimization Service",
+        "id" : "17",
+        "name" : "Prompt Optimization API Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "sarcsystem.0da0cc3b-878e-4cef-9792-14f09b074e21"
+        },
+        "tags" : "Element,Container,Prompt Optimization Service,Database",
+        "technology" : "Pinecone"
+      }, {
+        "description" : "Serves as the interface to the fine-tuned LLM",
+        "documentation" : { },
+        "group" : "LLM Service",
+        "id" : "19",
+        "name" : "LLM API",
+        "properties" : {
+          "structurizr.dsl.identifier" : "sarcsystem.llmserviceapi"
+        },
+        "relationships" : [ {
+          "description" : "Streams the LLM response to",
+          "destinationId" : "6",
+          "id" : "21",
+          "properties" : {
+            "structurizr.dsl.identifier" : "f95b4f60-4f12-4eb9-a68c-36d99ab53307"
+          },
+          "sourceId" : "19",
+          "tags" : "Relationship",
+          "technology" : "[HTTPS]"
+        }, {
+          "description" : "Reads from and writes to",
+          "destinationId" : "22",
+          "id" : "23",
+          "properties" : {
+            "structurizr.dsl.identifier" : "5d234924-2829-43ba-9c65-448dea019eb2"
+          },
+          "sourceId" : "19",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Reads from",
+          "destinationId" : "24",
+          "id" : "25",
+          "properties" : {
+            "structurizr.dsl.identifier" : "b520941f-b13b-4363-944f-57dc3476e8b6"
+          },
+          "sourceId" : "19",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,LLM Service,Service API",
+        "technology" : "Python and FastAPI"
+      }, {
+        "description" : "Stores the fine-tuned LLM model",
+        "documentation" : { },
+        "group" : "LLM Service",
+        "id" : "22",
+        "name" : "LLM API Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "sarcsystem.dc7af896-8e15-4fbd-9d5f-1af3b0422b7a"
+        },
+        "tags" : "Element,Container,LLM Service,Database",
+        "technology" : "Pinecone"
+      }, {
+        "description" : "Provides structured domain-specific knowledge for Software Architecture concepts",
+        "documentation" : { },
+        "group" : "LLM Service",
+        "id" : "24",
+        "name" : "LLM API Knowledge Graph",
+        "properties" : {
+          "structurizr.dsl.identifier" : "sarcsystem.08630610-a306-4047-9721-52b12cffb902"
+        },
+        "tags" : "Element,Container,LLM Service,Database",
+        "technology" : "Neo4j"
+      }, {
+        "description" : "Forwards payment processing requests to the payment system",
+        "documentation" : { },
+        "id" : "26",
+        "name" : "Payment Proxy API",
+        "properties" : {
+          "structurizr.dsl.identifier" : "sarcsystem.paymentproxyapi"
+        },
+        "relationships" : [ {
+          "description" : "Sends payment processing requests for user subscriptions to",
+          "destinationId" : "28",
+          "id" : "29",
+          "properties" : {
+            "structurizr.dsl.identifier" : "54d25ec7-f885-4834-82a1-730a69ac3179"
+          },
+          "sourceId" : "26",
+          "tags" : "Relationship",
+          "technology" : "[HTTPS]"
+        } ],
+        "tags" : "Element,Container,Payment Proxy Service,Service API",
+        "technology" : "Python and FastAPI"
+      } ],
+      "documentation" : { },
+      "id" : "2",
+      "location" : "Unspecified",
+      "name" : "S-ARC System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "sarcsystem"
+      },
+      "relationships" : [ {
+        "description" : "Sends payment processing requests for user subscriptions to",
+        "destinationId" : "28",
+        "id" : "30",
+        "linkedRelationshipId" : "29",
+        "sourceId" : "2",
+        "technology" : "[HTTPS]"
+      } ],
+      "tags" : "Element,Software System"
+    }, {
+      "description" : "Facilitates all payment processing functionalities",
+      "documentation" : { },
+      "id" : "28",
+      "location" : "Unspecified",
+      "name" : "Payment System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "paymentsystem"
+      },
+      "tags" : "Element,Software System,External System"
+    } ]
+  },
+  "name" : "Name",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICAhaWRlbnRpZmllcnMgaGllcmFyY2hpY2FsCgogICAgbW9kZWwgewogICAgICAgIHVzZXIgPSBwZXJzb24gIlVzZXIiCgogICAgICAgIHNBcmNTeXN0ZW0gPSBzb2Z0d2FyZVN5c3RlbSAiUy1BUkMgU3lzdGVtIiB7CiAgICAgICAgICAgIHdlYkFwcGxpY2F0aW9uID0gY29udGFpbmVyICJXZWIgQXBwbGljYXRpb24iICJEZWxpdmVycyB0aGUgc3RhdGljIGNvbnRlbnQgYW5kIHRoZSBjaGF0IGludGVyZmFjZSBzaW5nbGUgcGFnZSBhcHBsaWNhdGlvbiIgIlB5dGhvbiBhbmQgRmFzdEFQSSIgewogICAgICAgICAgICAgICAgdXNlciAtPiB0aGlzICJWaXNpdHMgY2hhdC5zLWFyYy5jb20gdXNpbmciICJbSFRUUFNdIgogICAgICAgICAgICB9CgogICAgICAgICAgICBzaW5nbGVQYWdlQXBwbGljYXRpb24gPSBjb250YWluZXIgIlNpbmdsZSBQYWdlIEFwcGxpY2F0aW9uIiAiUHJvdmlkZXMgYSBjaGF0IGludGVyZmFjZSB0byBpbnRlcmFjdCB3aXRoIHRoZSBMTE0iICJUeXBlc2NyaXB0IGFuZCBSZWFjdCIgewogICAgICAgICAgICAgICAgd2ViQXBwbGljYXRpb24gLT4gdGhpcyAiRGVsaXZlcnMgdG8gdGhlIHVzZXIncyB3ZWIgYnJvd3NlciIKICAgICAgICAgICAgICAgIHVzZXIgLT4gdGhpcyAiSW50ZXJhY3RzIHdpdGggdGhlIExMTSB0aHJvdWdoIGEgY2hhdCBpbnRlcmZhY2UgdXNpbmciICJbSFRUUFNdIgogICAgICAgICAgICB9CgogICAgICAgICAgICBhdXRoZW50aWNhdGlvblNlcnZpY2UgPSBncm91cCAiQXV0aGVudGljYXRpb24gU2VydmljZSIgewogICAgICAgICAgICAgICAgYXV0aGVudGljYXRpb25TZXJ2aWNlQXBpID0gY29udGFpbmVyICJBdXRoZW50aWNhdGlvbiBBUEkiICJQcm92aWRlcyB1c2VyIGF1dGhlbnRpY2F0aW9uIGFuZCBhdXRob3JpemF0aW9uIGZ1bmN0aW9uYWxpdHkiICJLb3RsaW4gYW5kIFNwcmluZyBCb290IiB7CiAgICAgICAgICAgICAgICAgICAgdGFncyAiQXV0aGVudGljYXRpb24gU2VydmljZSIgIlNlcnZpY2UgQVBJIgogICAgICAgICAgICAgICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiAtPiB0aGlzICJSZXF1ZXN0cyBhdXRoZW50aWNhdGlvbiBhbmQgYXV0aG9yaXphdGlvbiB0b2tlbnMgZnJvbSIgIltIVFRQU10iCiAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgY29udGFpbmVyICJBdXRoZW50aWNhdGlvbiBBUEkgRGF0YWJhc2UiICJTdG9yZXMgdXNlciBpbmZvcm1hdGlvbiIgIlBvc3RncmVTUUwiIHsKICAgICAgICAgICAgICAgICAgICB0YWdzICJBdXRoZW50aWNhdGlvbiBTZXJ2aWNlIiAiRGF0YWJhc2UiCiAgICAgICAgICAgICAgICAgICAgYXV0aGVudGljYXRpb25TZXJ2aWNlQXBpIC0+IHRoaXMgIlJlYWRzIGZyb20gYW5kIHdyaXRlcyB0byIgIltUQ1AvU1FMXSIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQoKICAgICAgICAgICAgIyBUaGlzIGlzIGEgc3RhdGVsZXNzIHNlcnZpY2UgYXMgd2VsbC4gSXQgcmVsaWVzIG9uIHRoZSBkZXBsb3ltZWQgZW1iZWRkaW5nIG1vZGVsIHRvIHJldHVybiByZWxldmFudCBlbWJlZGRpbmdzLgogICAgICAgICAgICBjb250ZXh0U2VydmljZUFwaSA9IGNvbnRhaW5lciAiQ29udGV4dCBBUEkiICJDb252ZXJ0cyB1c2VyIHByb21wdHMgdG8gdmVjdG9yIGVtYmVkZGluZ3MgYW5kIHJlcGFja2FnZXMgdGhlIHF1ZXJ5IGZvciBvcHRpbWFsIHJlc3BvbnNlIHF1YWxpdHkiICJQeXRob24gYW5kIEZhc3RBUEkiIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkNvbnRleHQgU2VydmljZSIgIlNlcnZpY2UgQVBJIgogICAgICAgICAgICAgICAgc2luZ2xlUGFnZUFwcGxpY2F0aW9uIC0+IHRoaXMgIlNlbmRzIG5hdHVyYWwgbGFuZ3VhZ2UgcHJvbXB0IHRvIiAiW0hUVFBTXSIKICAgICAgICAgICAgfQoKICAgICAgICAgICAgIyBJdCdzIHVzZWZ1bCB0byBoYXZlIHRoaXMgYXMgYSBzZXBhcmF0ZSBzZXJ2aWNlIGJlY2F1c2UgdGhpcyB3aWxsIG5lZWQgdG8gYmUgZG9uZSBmb3IKICAgICAgICAgICAgIyBlYWNoIHByb21wdCB0aGF0IGEgdXNlciBzZW5kcy4gVGhpcyB3YXksIHdlIGNhbiBzY2FsZSBpbmRlcGRlbnRseSB0byBtYWludGFpbiBwZXJmb3JtYW5jZSBleHBlY3RhdGlvbnMuCiAgICAgICAgICAgIHByb21wdE9wdGltaXphdGlvblNlcnZpY2UgPSBncm91cCAiUHJvbXB0IE9wdGltaXphdGlvbiBTZXJ2aWNlIiB7CiAgICAgICAgICAgICAgICBwcm9tcHRPcHRpbWl6YXRpb25TZXJ2aWNlQXBpID0gY29udGFpbmVyICJQcm9tcHQgT3B0aW1pemF0aW9uIEFQSSIgIk9wdGltaXplcyB0aGUgcHJvdmlkZWQgcHJvbXB0IHdpdGggcmVsZXZhbnQgZW1iZWRkaW5ncyIgIlB5dGhvbiBhbmQgRmFzdEFQSSIgewogICAgICAgICAgICAgICAgICAgIHRhZ3MgIlByb21wdCBPcHRpbWl6YXRpb24gU2VydmljZSIgIlNlcnZpY2UgQVBJIgogICAgICAgICAgICAgICAgICAgIGNvbnRleHRTZXJ2aWNlQXBpIC0+IHRoaXMgIkZvcndhcmRzIHRoZSBwcm9tcHQgZW1iZWRkaW5ncyBnZW5lcmF0ZWQgYnkgdGhlIGVtYmVkZGluZyBtb2RlbCIgIltIVFRQU10iCiAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgY29udGFpbmVyICJQcm9tcHQgT3B0aW1pemF0aW9uIEFQSSBEYXRhYmFzZSIgIlBlcmZvcm1zIGEgbG9va3VwICIgIlBpbmVjb25lIiB7CiAgICAgICAgICAgICAgICAgICAgdGFncyAiUHJvbXB0IE9wdGltaXphdGlvbiBTZXJ2aWNlIiAiRGF0YWJhc2UiCiAgICAgICAgICAgICAgICAgICAgcHJvbXB0T3B0aW1pemF0aW9uU2VydmljZUFwaSAtPiB0aGlzICJSZWFkcyBmcm9tIGFuZCB3cml0ZXMgdG8iCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGxsbVNlcnZpY2UgPSBncm91cCAiTExNIFNlcnZpY2UiIHsKICAgICAgICAgICAgICAgIGxsbVNlcnZpY2VBcGkgPSBjb250YWluZXIgIkxMTSBBUEkiICJTZXJ2ZXMgYXMgdGhlIGludGVyZmFjZSB0byB0aGUgZmluZS10dW5lZCBMTE0iICJQeXRob24gYW5kIEZhc3RBUEkiIHsKICAgICAgICAgICAgICAgICAgICB0YWdzICJMTE0gU2VydmljZSIgIlNlcnZpY2UgQVBJIgogICAgICAgICAgICAgICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiAtPiB0aGlzICJNYWtlcyBBUEkgY2FsbHMgdG8iICJbSFRUUFNdIgogICAgICAgICAgICAgICAgICAgIHRoaXMgLT4gc2luZ2xlUGFnZUFwcGxpY2F0aW9uICJTdHJlYW1zIHRoZSBMTE0gcmVzcG9uc2UgdG8iICJbSFRUUFNdIgogICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgIGNvbnRhaW5lciAiTExNIEFQSSBEYXRhYmFzZSIgIlN0b3JlcyB0aGUgZmluZS10dW5lZCBMTE0gbW9kZWwiICJQaW5lY29uZSJ7CiAgICAgICAgICAgICAgICAgICAgdGFncyAiTExNIFNlcnZpY2UiICJEYXRhYmFzZSIKICAgICAgICAgICAgICAgICAgICBsbG1TZXJ2aWNlQXBpIC0+IHRoaXMgIlJlYWRzIGZyb20gYW5kIHdyaXRlcyB0byIKICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgICAgICBjb250YWluZXIgIkxMTSBBUEkgS25vd2xlZGdlIEdyYXBoIiAiUHJvdmlkZXMgc3RydWN0dXJlZCBkb21haW4tc3BlY2lmaWMga25vd2xlZGdlIGZvciBTb2Z0d2FyZSBBcmNoaXRlY3R1cmUgY29uY2VwdHMiICJOZW80aiIgewogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkxMTSBTZXJ2aWNlIiAiRGF0YWJhc2UiCiAgICAgICAgICAgICAgICAgICAgbGxtU2VydmljZUFwaSAtPiB0aGlzICJSZWFkcyBmcm9tIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CgogICAgICAgICAgICAjIFRoaXMgaXMgYSBzdGF0ZWxlc3Mgc2VydmljZSBzbyBubyBkYXRhYmFzZS4gSXQgb25seSBleGlzdHMgdG8gbWFrZSBBUEkgY2FsbHMgdG8gdGhlIGFjdHVhbCBwYXltZW50IGdhdGV3YXkuCiAgICAgICAgICAgIHBheW1lbnRQcm94eUFwaSA9IGNvbnRhaW5lciAiUGF5bWVudCBQcm94eSBBUEkiICJGb3J3YXJkcyBwYXltZW50IHByb2Nlc3NpbmcgcmVxdWVzdHMgdG8gdGhlIHBheW1lbnQgc3lzdGVtIiAiUHl0aG9uIGFuZCBGYXN0QVBJIiB7CiAgICAgICAgICAgICAgICB0YWdzICJQYXltZW50IFByb3h5IFNlcnZpY2UiICJTZXJ2aWNlIEFQSQogICAgICAgICAgICAgICAgc2luZ2xlUGFnZUFwcGxpY2F0aW9uIC0+IHRoaXMgIk1ha2VzIEFQSSBjYWxscyB0byIgIltIVFRQU10iCiAgICAgICAgICAgIH0KICAgICAgICB9CgogICAgICAgIHBheW1lbnRTeXN0ZW0gPSBzb2Z0d2FyZXN5c3RlbSAiUGF5bWVudCBTeXN0ZW0iICJGYWNpbGl0YXRlcyBhbGwgcGF5bWVudCBwcm9jZXNzaW5nIGZ1bmN0aW9uYWxpdGllcyIgewogICAgICAgICAgICB0YWdzICJFeHRlcm5hbCBTeXN0ZW0iCiAgICAgICAgICAgIHNBcmNTeXN0ZW0ucGF5bWVudFByb3h5QXBpIC0+IHRoaXMgIlNlbmRzIHBheW1lbnQgcHJvY2Vzc2luZyByZXF1ZXN0cyBmb3IgdXNlciBzdWJzY3JpcHRpb25zIHRvIiAiW0hUVFBTXSIKICAgICAgICB9CiAgICB9CgogICAgdmlld3MgewogICAgICAgIHN5c3RlbUNvbnRleHQgc0FyY1N5c3RlbSB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgY29udGFpbmVyIHNBcmNTeXN0ZW0gewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICB9CgogICAgICAgIHRoZW1lIGRlZmF1bHQKCiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAgZWxlbWVudCAiUGVyc29uIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBQZXJzb24KICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJTZXJ2aWNlIEFQSSIgewogICAgICAgICAgICAgICAgc2hhcGUgaGV4YWdvbgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkRhdGFiYXNlIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBjeWxpbmRlcgogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfQoKICAgIGNvbmZpZ3VyYXRpb24gewogICAgICAgIHNjb3BlIHNvZnR3YXJlc3lzdGVtCiAgICB9Cn0K"
+  },
+  "views" : {
+    "configuration" : {
+      "branding" : { },
+      "lastSavedView" : "Container-001",
+      "styles" : {
+        "elements" : [ {
+          "shape" : "Person",
+          "tag" : "Person"
+        }, {
+          "shape" : "Hexagon",
+          "tag" : "Service API"
+        }, {
+          "shape" : "Cylinder",
+          "tag" : "Database"
+        } ]
+      },
+      "terminology" : { },
+      "themes" : [ "https://static.structurizr.com/themes/default/theme.json" ]
+    },
+    "containerViews" : [ {
+      "dimensions" : {
+        "height" : 4025,
+        "width" : 3266
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 2295,
+        "y" : 208
+      }, {
+        "id" : "3",
+        "x" : 1933,
+        "y" : 908
+      }, {
+        "id" : "6",
+        "x" : 1933,
+        "y" : 1508
+      }, {
+        "id" : "9",
+        "x" : 433,
+        "y" : 2108
+      }, {
+        "id" : "11",
+        "x" : 433,
+        "y" : 2708
+      }, {
+        "id" : "13",
+        "x" : 1183,
+        "y" : 2108
+      }, {
+        "id" : "15",
+        "x" : 1195,
+        "y" : 2708
+      }, {
+        "id" : "17",
+        "x" : 1195,
+        "y" : 3308
+      }, {
+        "id" : "19",
+        "x" : 1183,
+        "y" : 908
+      }, {
+        "id" : "22",
+        "x" : 433,
+        "y" : 1508
+      }, {
+        "id" : "24",
+        "x" : 1183,
+        "y" : 1508
+      }, {
+        "id" : "26",
+        "x" : 1933,
+        "y" : 2108
+      }, {
+        "id" : "28",
+        "x" : 2591,
+        "y" : 2708
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Container-001",
+      "order" : 2,
+      "paperSize" : "A3_Portrait",
+      "relationships" : [ {
+        "id" : "10",
+        "vertices" : [ {
+          "x" : 1812,
+          "y" : 1912
+        }, {
+          "x" : 900,
+          "y" : 2004
+        } ]
+      }, {
+        "id" : "12"
+      }, {
+        "id" : "14"
+      }, {
+        "id" : "16"
+      }, {
+        "id" : "18"
+      }, {
+        "id" : "20",
+        "vertices" : [ {
+          "x" : 1872,
+          "y" : 1259
+        } ]
+      }, {
+        "id" : "21",
+        "vertices" : [ {
+          "x" : 1693,
+          "y" : 1500
+        } ]
+      }, {
+        "id" : "23"
+      }, {
+        "id" : "25"
+      }, {
+        "id" : "27"
+      }, {
+        "id" : "29"
+      }, {
+        "id" : "4"
+      }, {
+        "id" : "7"
+      }, {
+        "id" : "8",
+        "vertices" : [ {
+          "x" : 2533,
+          "y" : 700
+        }, {
+          "x" : 2533,
+          "y" : 1208
+        } ]
+      } ],
+      "softwareSystemId" : "2"
+    } ],
+    "systemContextViews" : [ {
+      "dimensions" : {
+        "height" : 2016,
+        "width" : 866
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 233,
+        "y" : 208
+      }, {
+        "id" : "2",
+        "x" : 208,
+        "y" : 908
+      }, {
+        "id" : "28",
+        "x" : 208,
+        "y" : 1508
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "generatedKey" : true,
+      "key" : "SystemContext-001",
+      "order" : 1,
+      "paperSize" : "A5_Portrait",
+      "relationships" : [ {
+        "id" : "30"
+      }, {
+        "id" : "5"
+      } ],
+      "softwareSystemId" : "2"
+    } ]
+  }
+}

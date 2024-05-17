@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  structurizr:
+    image: structurizr/lite
+    ports: 
+      - "8080:8080"
+    volumes:
+      - ./diagrams:/usr/local/structurizr
+
+volumes:
+  diagrams:
