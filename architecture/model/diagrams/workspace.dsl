@@ -14,7 +14,7 @@ workspace {
             singlePageApplication = container "Single Page Application" "Provides a chat interface to interact with the LLM" "Typescript and React" {
                 tags "Web Browser"
                 webApplication -> this "Delivers to the user's web browser"
-                user -> this "Interacts with the LLM through a chat interface using" "HTTPS"
+                user -> this "Interacts with the LLM through a chat interface using" "JSON/HTTPS"
             }
 
             authService = group "Auth Service" {
@@ -23,22 +23,22 @@ workspace {
 
                     signInController = component "Sign In Controller" "Allows users to sign into the S-ARC System" "Spring Boot Controller" {
                         tags "Auth Service" "Service Component"
-                        singlePageApplication -> this "Makes auth requests to" "HTTPS"
+                        singlePageApplication -> this "Makes auth requests to" "JSON/HTTPS"
                     }
 
                     signUpController = component "Sign Up Controller" "Allows users to sign up for the S-ARC System" "Spring Boot Controller" {
                         tags "Auth Service" "Service Component"
-                        singlePageApplication -> this "Requests new account creation from" "HTTPS"
+                        singlePageApplication -> this "Requests new account creation from" "JSON/HTTPS"
                     }
                     
                     resetPasswordController = component "Reset Password Controller" "Allows users to reset their password with a one-time URL" "Spring Boot Controller" {
                         tags "Auth Service" "Service Component"
-                        singlePageApplication -> this "Requests password reset from" "HTTPS"
+                        singlePageApplication -> this "Requests password reset from" "JSON/HTTPS"
                     }
                     
                     refreshTokenController = component "Refresh Token Controller" "Allows users to refresh their authentication tokens" "Spring Boot Controller" {
                         tags "Auth Service" "Service Component"
-                        singlePageApplication -> this "Requests new auth tokens from" "HTTPS"
+                        singlePageApplication -> this "Requests new auth tokens from" "JSON/HTTPS"
                     }
 
                     springSecurity = component "Spring Security" "Provides authentication and authorization functionality" "Spring Bean" {
@@ -51,10 +51,10 @@ workspace {
 
                 container "Auth API Database" "Stores user information" "PostgreSQL" {
                     tags "Auth Service" "Database"
-                    authServiceApi -> this "Reads from and writes to" "[TCP/SQL]"
-                    authServiceApi.signInController -> this "Queries for user information"
-                    authServiceApi.signUpController -> this "Writes user information"
-                    authServiceApi.resetPasswordController -> this "Updates user information"
+                    authServiceApi -> this "Reads from and writes to" "SQL/TCP"
+                    authServiceApi.signInController -> this "Queries for user information" "JSON/HTTPS"
+                    authServiceApi.signUpController -> this "Writes user information" "JSON/HTTPS"
+                    authServiceApi.resetPasswordController -> this "Updates user information" "JSON/HTTPS"
                 }
             }
 
@@ -168,10 +168,6 @@ workspace {
     }
 
     views {
-        deployment sArcSystem "Live" "AmazonWebServicesDeployment" {
-            include *
-        }
-
         systemContext sArcSystem "S-ARC_System" {
             include *
         }
