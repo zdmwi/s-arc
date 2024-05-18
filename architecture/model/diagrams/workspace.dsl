@@ -54,7 +54,7 @@ workspace {
                     }
                 }
 
-                authServiceDataService = container "Auth API Data Service" "Stores user information" "PostgreSQL" {
+                authServiceDataService = container "Auth API Data Service" "Stores user information" "Amazon Aurora" {
                     tags "Auth Service" "Database"
                     authServiceApi -> this "Reads from and writes to" "SQL/TCP"
                     authServiceApi.signInController -> this "Queries for user information" "JSON/HTTPS"
@@ -154,7 +154,7 @@ workspace {
                     }
                 }
 
-                container "Payment Facade API Database" "Tracks user subscription information" "PostgreSQL" {
+                container "Payment Facade API Database" "Tracks user subscription information" "Amazon Aurora" {
                     tags "Payment Facade Service" "Database"
                     paymentFacadeApi.paymentController -> this "Reads from and writes to" "SQL/TCP"
                 }
@@ -202,7 +202,7 @@ workspace {
             autolayout lr
         }
 
-        themes default https://static.structurizr.com/themes/amazon-web-services-2023.01.31/theme.json
+        themes default 
 
         styles {
             element "API Gateway" {
